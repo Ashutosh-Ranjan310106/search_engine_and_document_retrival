@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block title %}DocRAG — Document Search{% endblock %}
+
+{% block content %}
+<!-- ── Hero ─────────────────────────────────────────────────────────────── -->
+<section class="hero">
+  <h1 class="hero-title">Local Document Intelligence</h1>
+  <p class="hero-sub">Graph-augmented RAG over your files — fully offline via Ollama</p>
+  <div class="hero-models">
+    <span class="model-chip index">⚙ qwen4b <em>index</em></span>
+    <span class="model-chip answer">💬 phi4-mini <em>answer</em></span>
+    <span class="model-chip embed">⬡ nomic-embed <em>vectors</em></span>
+    <span class="model-chip parse">📄 Docling <em>parse</em></span>
+  </div>
+</section>
+
+<!-- ── Two-column layout ─────────────────────────────────────────────────── -->
+<div class="two-col">
+
+  <!-- LEFT: upload + file list ─────────────────────────────────────────── -->
+  <aside class="panel panel--files">
+    <h2 class="panel-title">Documents</h2>
+
+    <!-- Dropzone -->
+    <div id="dropzone" class="dropzone">
+      <div class="dropzone-inner">
+        <span class="dz-icon">📂</span>
+        <p>Drop files here or <label class="dz-label" for="file-input">browse</label></p>
+        <p class="dz-hint">PDF · TXT · MD · DOCX · HTML — max {{ config.get('MAX_CONTENT_LENGTH', 52428800) // 1048576 }} MB each</p>
+        <input type="file" id="file-input" multiple accept=".pdf,.txt,.md,.docx,.html" class="sr-only" />
+      </div>
+    </div>
+
+    <div id="upload-progress" class="upload-progress hidden"></div>
+
+    <!-- File list -->
+    <ul class="file-list" id="file-list">
+      {% if uploads %}
+        {% for f in uploads %}
+        <li class="file-item" data-name="{{ f.name }}">
+          <span class="file-icon">{{ '📄' if f.name.endswith('.pdf') else '📝' }}</span>
+          <div class="file-meta">
+            <span class="file-name">{{ f.name }}</span>
+            <span class="file-info">{{ f.size_kb }} KB · {{ f.modified }}</span>
+          </div>
+          <form action="{{ url_for('delete_file', filename=f.name) }}" method="post" class="inline">
+            <button type="submit" class="btn-icon btn-del" title="Remove">✕</button>
+          </form>
+        </li>
+        {% endfor %}
+      {% else %}
+        <li class="file-item file-item--empty">No documents yet. Upload something!</li>
+      {% endif %}
+    </ul>
+  </aside>
+
+  <!-- RIGHT: query + answer ────────────────────────────────────────────── -->
+  <section class="panel panel--query">
+    <h2 class="panel-title">Search & Summarise</h2>
+
+    <!-- Mode tabs -->
+    <div class="mode-tabs" role="tablist">
+      {% for m, label, tip in [
+          ('hybrid',  'Hybrid',  'Combines local + global graph traversal'),
+          ('local',   'Local',   'Nearest-neighbour entity search'),
+          ('global',  'Global',  'Graph-level community reasoning'),
+          ('naive',   'Naive',   'Simple vector similarity – no graph'),
+      ] %}
+      <button class="tab {% if loop.first %}tab--active{% endif %}"
+              role="tab" data-mode="{{ m }}" title="{{ tip }}">
+        {{ label }}
+      </button>
+      {% endfor %}
+    </div>
+
+    <!-- Query form -->
+    <div class="query-form">
+      <textarea id="query-input" class="query-textarea"
+                placeholder="Ask anything about your documents…"
+                rows="3"></textarea>
+      <div class="query-actions">
+        <label class="toggle">
+          <input type="checkbox" id="summarise-toggle" />
+          <span class="toggle-label">Summarise</span>
+        </label>
+        <button id="ask-btn" class="btn btn--primary" disabled>Ask →</button>
+      </div>
+    </div>
+
+    <!-- Answer area -->
+    <div id="answer-card" class="answer-card hidden">
+      <div class="answer-header">
+        <span id="answer-mode-badge" class="badge"></span>
+        <button id="copy-btn" class="btn-icon" title="Copy answer">⎘</button>
+      </div>
+      <div id="answer-text" class="answer-text"></div>
+    </div>
+
+    <div id="answer-loader" class="answer-loader hidden">
+      <span class="spinner"></span> Querying graph…
+    </div>
+
+    <!-- History -->
+    <div id="history-section" class="history-section hidden">
+      <h3 class="history-title">History</h3>
+      <ul id="history-list" class="history-list"></ul>
+    </div>
+  </section>
+</div>
+
+<!-- ── Knowledge graph ───────────────────────────────────────────────────── -->
+<section class="panel panel--graph" id="graph-section">
+  <div class="graph-header">
+    <h2 class="panel-title">Knowledge Graph</h2>
+    <button id="load-graph-btn" class="btn btn--secondary">Load Graph</button>
+  </div>
+  <div id="graph-container" class="graph-container">
+    <p class="graph-placeholder">Click "Load Graph" to visualise entity relationships</p>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"
+        integrity="sha512-M7nHCiNUOwFt6Us3r8alutZLm9qMt4s9951uo8jqO4UwJ1hziseL6O3ndFyigx6+LREfZqnhHxYjKRJ8ZQ69A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="{{ url_for('static', filename='js/graph.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,143 @@
+2026-06-13 10:13:19,686 [INFO] rag_engine – Initialising LightRAG  (indexing=qwen3:8b, answer=phi4-mini, embed=nomic-embed-text)
+2026-06-13 10:13:19,687 [ERROR] __main__ – RAG engine init failed
+Traceback (most recent call last):
+  File "C:\Users\rrpra\Documents\Github\search_engine_and_document_retrival\app.py", line 69, in _background_init
+    asyncio.run(engine.initialise())
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rrpra\Documents\Github\search_engine_and_document_retrival\venv\Lib\site-packages\nest_asyncio.py", line 30, in run
+    return loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\rrpra\Documents\Github\search_engine_and_document_retrival\venv\Lib\site-packages\nest_asyncio.py", line 98, in run_until_complete
+    return f.result()
+           ~~~~~~~~^^
+  File "C:\Users\rrpra\AppData\Local\Programs\Python\Python313\Lib\asyncio\futures.py", line 199, in result
+    raise self._exception.with_traceback(self._exception_tb)
+  File "C:\Users\rrpra\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 304, in __step_run_and_handle_result
+    result = coro.send(None)
+  File "C:\Users\rrpra\Documents\Github\search_engine_and_document_retrival\rag_engine.py", line 121, in initialise
+    self.rag = LightRAG(
+               ~~~~~~~~^
+        working_dir=str(self.storage_dir),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        embedding_func=self._make_embedding_func(),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: LightRAG.__init__() got an unexpected keyword argument 'llm_model_max_token_size'
+2026-06-13 10:13:19,719 [INFO] werkzeug – [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.226.137.132:5000
+2026-06-13 10:13:19,719 [INFO] werkzeug – [33mPress CTRL+C to quit[0m
+2026-06-13 10:13:27,299 [INFO] werkzeug – 127.0.0.1 - - [13/Jun/2026 10:13:27] "GET / HTTP/1.1" 200 -
+2026-06-13 10:13:27,355 [INFO] werkzeug – 127.0.0.1 - - [13/Jun/2026 10:13:27] "GET /static/css/main.css HTTP/1.1" 200 -
+2026-06-13 10:13:27,373 [INFO] werkzeug – 127.0.0.1 - - [13/Jun/2026 10:13:27] "GET /static/js/graph.js HTTP/1.1" 200 -
+2026-06-13 10:13:27,376 [INFO] werkzeug – 127.0.0.1 - - [13/Jun/2026 10:13:27] "GET /static/js/app.js HTTP/1.1" 200 -
+2026-06-13 10:13:27,637 [INFO] werkzeug – 127.0.0.1 - - [13/Jun/2026 10:13:27] "GET /status HTTP/1.1" 200 -
+2026-06-13 10:13:38,055 [INFO] werkzeug – 127.0.0.1 - - [13/Jun/2026 10:13:38] "GET / HTTP/1.1" 200 -
+2026-06-13 10:13:38,089 [INFO] werkzeug – 127.0.0.1 - - [13/Jun/2026 10:13:38] "GET /static/css/main.css HTTP/1.1" 200 -
+2026-06-13 10:13:38,090 [INFO] werkzeug – 127.0.0.1 - - [13/Jun/2026 10:13:38] "GET /static/js/app.js HTTP/1.1" 200 -
+2026-06-13 10:13:38,092 [INFO] werkzeug – 127.0.0.1 - - [13/Jun/2026 10:13:38] "GET /static/js/graph.js HTTP/1.1" 200 -
+2026-06-13 10:13:38,346 [INFO] werkzeug – 127.0.0.1 - - [13/Jun/2026 10:13:38] "GET /status HTTP/1.1" 200 -
+2026-06-13 10:13:38,633 [INFO] werkzeug – 127.0.0.1 - - [13/Jun/2026 10:13:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-13 10:15:14,974 [INFO] werkzeug – 127.0.0.1 - - [13/Jun/2026 10:15:14] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2026-06-13 10:15:14,982 [INFO] werkzeug – 127.0.0.1 - - [13/Jun/2026 10:15:14] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-06-13 10:15:45,416 [INFO] werkzeug – 127.0.0.1 - - [13/Jun/2026 10:15:45] "[35m[1mGET /graph HTTP/1.1[0m" 503 -
+2026-06-13 10:18:07,421 [INFO] rag_engine – Initialising LightRAG  (indexing=qwen2.5:4b, answer=phi4-mini, embed=nomic-embed-text)
+2026-06-13 10:18:07,421 [INFO] rag_engine – LightRAG init params: ['working_dir', 'llm_model_func', 'embedding_func', 'llm_model_name', 'llm_model_max_async', 'llm_model_kwargs']
+2026-06-13 10:18:07,442 [INFO] werkzeug – [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.226.137.132:5000
+2026-06-13 10:18:07,442 [INFO] werkzeug – [33mPress CTRL+C to quit[0m
+2026-06-13 10:18:08,042 [INFO] nano-vectordb – Init {'embedding_dim': 768, 'metric': 'cosine', 'storage_file': 'rag_storage\\vdb_entities.json'} 0 data
+2026-06-13 10:18:08,043 [INFO] nano-vectordb – Init {'embedding_dim': 768, 'metric': 'cosine', 'storage_file': 'rag_storage\\vdb_relationships.json'} 0 data
+2026-06-13 10:18:08,044 [INFO] nano-vectordb – Init {'embedding_dim': 768, 'metric': 'cosine', 'storage_file': 'rag_storage\\vdb_chunks.json'} 0 data
+2026-06-13 10:18:08,060 [INFO] __main__ – RAG engine ready
+2026-06-13 10:18:30,408 [INFO] werkzeug – 127.0.0.1 - - [13/Jun/2026 10:18:30] "GET / HTTP/1.1" 200 -
+2026-06-13 10:18:30,435 [INFO] werkzeug – 127.0.0.1 - - [13/Jun/2026 10:18:30] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2026-06-13 10:18:30,439 [INFO] werkzeug – 127.0.0.1 - - [13/Jun/2026 10:18:30] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-06-13 10:18:30,439 [INFO] werkzeug – 127.0.0.1 - - [13/Jun/2026 10:18:30] "[36mGET /static/js/graph.js HTTP/1.1[0m" 304 -
+2026-06-13 10:18:30,451 [INFO] werkzeug – 127.0.0.1 - - [13/Jun/2026 10:18:30] "GET /status HTTP/1.1" 200 -
+2026-06-13 10:18:30,460 [INFO] werkzeug – 127.0.0.1 - - [13/Jun/2026 10:18:30] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-06-13 10:18:40,631 [INFO] docling.datamodel.document – detected formats: [<InputFormat.PDF: 'pdf'>]
+2026-06-13 10:18:42,430 [INFO] docling.document_converter – Going to convert document batch...
+2026-06-13 10:18:42,431 [INFO] docling.document_converter – Initializing pipeline for StandardPdfPipeline with options hash af605ac4b878857c2150ff1e95ea3efd
+2026-06-13 10:18:42,447 [INFO] docling.models.factories.base_factory – Loading plugin 'docling_defaults'
+2026-06-13 10:18:42,453 [INFO] docling.models.factories – Registered picture descriptions: ['picture_description_vlm_engine', 'vlm', 'api']
+2026-06-13 10:18:42,468 [INFO] docling.models.factories.base_factory – Loading plugin 'docling_defaults'
+2026-06-13 10:18:42,491 [INFO] docling.models.factories – Registered ocr engines: ['auto', 'easyocr', 'kserve_v2_ocr', 'ocrmac', 'rapidocr', 'tesserocr', 'tesseract']
+2026-06-13 10:18:42,646 [INFO] docling.models.factories.base_factory – Loading plugin 'docling_defaults'
+2026-06-13 10:18:42,652 [INFO] docling.models.factories – Registered layout engines: ['layout_object_detection', 'docling_layout_default', 'docling_experimental_table_crops_layout']
+2026-06-13 10:18:42,669 [INFO] docling.utils.accelerator_utils – Accelerator device: 'cpu'
+2026-06-13 10:18:44,259 [INFO] docling.models.factories.base_factory – Loading plugin 'docling_defaults'
+2026-06-13 10:18:44,264 [INFO] docling.models.factories – Registered table structure engines: ['docling_tableformer', 'docling_tableformer_v2', 'granite_vision_table']
+2026-06-13 10:18:44,901 [INFO] docling.utils.accelerator_utils – Accelerator device: 'cpu'
+2026-06-13 10:18:45,653 [INFO] docling.pipeline.base_pipeline – Processing document R20CSE2202-OPERATING-SYSTEMS.pdf
+2026-06-13 10:18:57,185 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [26]: std::bad_alloc
+2026-06-13 10:18:57,223 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [27]: std::bad_alloc
+2026-06-13 10:18:57,262 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [28]: std::bad_alloc
+2026-06-13 10:18:57,282 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [29]: std::bad_alloc
+2026-06-13 10:18:57,318 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [30]: std::bad_alloc
+2026-06-13 10:18:57,349 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [31]: std::bad_alloc
+2026-06-13 10:18:57,380 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [32]: std::bad_alloc
+2026-06-13 10:18:57,407 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [33]: std::bad_alloc
+2026-06-13 10:18:57,435 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [34]: std::bad_alloc
+2026-06-13 10:18:57,466 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [35]: std::bad_alloc
+2026-06-13 10:18:57,500 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [36]: std::bad_alloc
+2026-06-13 10:18:57,534 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [37]: std::bad_alloc
+2026-06-13 10:18:57,569 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [38]: std::bad_alloc
+2026-06-13 10:18:57,602 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [39]: std::bad_alloc
+2026-06-13 10:18:57,633 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [40]: std::bad_alloc
+2026-06-13 10:18:57,666 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [41]: std::bad_alloc
+2026-06-13 10:18:57,691 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [42]: std::bad_alloc
+2026-06-13 10:18:57,722 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [43]: std::bad_alloc
+2026-06-13 10:18:57,750 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [44]: std::bad_alloc
+2026-06-13 10:18:57,785 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [45]: std::bad_alloc
+2026-06-13 10:18:57,818 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [46]: std::bad_alloc
+2026-06-13 10:18:57,854 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [47]: std::bad_alloc
+2026-06-13 10:18:57,889 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [48]: std::bad_alloc
+2026-06-13 10:18:57,922 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [49]: std::bad_alloc
+2026-06-13 10:18:57,957 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [50]: std::bad_alloc
+2026-06-13 10:18:57,993 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [51]: std::bad_alloc
+2026-06-13 10:18:58,260 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [53]: std::bad_alloc
+2026-06-13 10:18:58,544 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [54]: std::bad_alloc
+2026-06-13 10:18:58,627 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [55]: std::bad_alloc
+2026-06-13 10:18:59,689 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [56]: std::bad_alloc
+2026-06-13 10:18:59,770 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [57]: std::bad_alloc
+2026-06-13 10:18:59,819 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [58]: std::bad_alloc
+2026-06-13 10:18:59,884 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [59]: std::bad_alloc
+2026-06-13 10:19:00,926 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [60]: std::bad_alloc
+2026-06-13 10:19:00,987 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [61]: std::bad_alloc
+2026-06-13 10:19:01,051 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [62]: std::bad_alloc
+2026-06-13 10:19:02,097 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [63]: std::bad_alloc
+2026-06-13 10:19:03,222 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [64]: std::bad_alloc
+2026-06-13 10:19:04,280 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [65]: std::bad_alloc
+2026-06-13 10:19:05,330 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [66]: std::bad_alloc
+2026-06-13 10:19:06,371 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [67]: std::bad_alloc
+2026-06-13 10:19:07,421 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [68]: std::bad_alloc
+2026-06-13 10:19:08,454 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [69]: std::bad_alloc
+2026-06-13 10:19:09,504 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [70]: std::bad_alloc
+2026-06-13 10:19:10,533 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [71]: std::bad_alloc
+2026-06-13 10:19:11,570 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [72]: std::bad_alloc
+2026-06-13 10:19:12,621 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [73]: std::bad_alloc
+2026-06-13 10:19:13,670 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [74]: std::bad_alloc
+2026-06-13 10:19:14,719 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [75]: std::bad_alloc
+2026-06-13 10:19:15,769 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [76]: std::bad_alloc
+2026-06-13 10:19:16,810 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [77]: std::bad_alloc
+2026-06-13 10:19:17,859 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [78]: std::bad_alloc
+2026-06-13 10:19:18,920 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [79]: std::bad_alloc
+2026-06-13 10:19:19,968 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [80]: std::bad_alloc
+2026-06-13 10:19:21,017 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [81]: std::bad_alloc
+2026-06-13 10:19:22,066 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [82]: std::bad_alloc
+2026-06-13 10:19:23,105 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [83]: std::bad_alloc
+2026-06-13 10:19:24,150 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [84]: std::bad_alloc
+2026-06-13 10:19:25,185 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [85]: std::bad_alloc
+2026-06-13 10:19:26,233 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [86]: std::bad_alloc
+2026-06-13 10:19:27,274 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [87]: std::bad_alloc
+2026-06-13 10:19:28,316 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [88]: std::bad_alloc
+2026-06-13 10:19:29,374 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [89]: std::bad_alloc
+2026-06-13 10:19:30,424 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [90]: std::bad_alloc
+2026-06-13 10:19:31,473 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [91]: std::bad_alloc
+2026-06-13 10:19:32,523 [ERROR] docling.pipeline.standard_pdf_pipeline – Stage preprocess failed for run 1, pages [92]: std::bad_alloc

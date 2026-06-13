@@ -1,0 +1,20 @@
+# ── DocRAG requirements ────────────────────────────────────────────────────────
+# Install LightRAG FIRST from source (editable):
+#   git clone https://github.com/HKUDS/LightRAG.git
+#   cd LightRAG && pip install -e ".[api]"
+#
+# Then install the rest:
+#   pip install -r requirements.txt
+
+flask>=3.0.0
+werkzeug>=3.0.0
+nest-asyncio>=1.6.0
+
+# Docling for document parsing + entity extraction
+docling>=2.5.0
+
+# networkx for graph export
+networkx>=3.3
+
+# numpy (likely already pulled by lightrag / docling)
+numpy>=1.26.0
