@@ -1,260 +1,506 @@
 """
-rag_engine.py
-─────────────
-LightRAG (HKUDS editable install) wired to:
-  • Docling  – document parsing + entity/structure extraction
-  • qwen4b   – indexing / entity-extraction LLM  (via Ollama)
-  • phi4-mini – answer LLM                        (via Ollama)
-  • nomic-embed-text – embeddings                 (via Ollama)
+rag_engine.py  –  LightRAG 1.5.3 + Docling + Ollama
 """
 
 from __future__ import annotations
 
 import asyncio
+import gc
 import json
 import logging
 import os
+import shutil
+import time
 from pathlib import Path
 from typing import Any
 
+import aiohttp
 import numpy as np
 
-# ── LightRAG (editable install: pip install -e ".[api]") ──────────────────────
 from lightrag import LightRAG, QueryParam
-from lightrag.llm.ollama import ollama_model_complete, ollama_embed
 from lightrag.utils import EmbeddingFunc
 
-# ── Docling ───────────────────────────────────────────────────────────────────
-from docling.document_converter import DocumentConverter
+from docling.document_converter import DocumentConverter, PdfFormatOption
 from docling.datamodel.base_models import InputFormat
 from docling.datamodel.pipeline_options import PdfPipelineOptions
-from docling.document_converter import PdfFormatOption
 
-log = logging.getLogger(__name__)
+# ── Logging setup ─────────────────────────────────────────────────────────────
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s  %(levelname)-8s  %(name)s  %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
+log = logging.getLogger("rag_engine")
 
-# ── Model names ───────────────────────────────────────────────────────────────
-INDEXING_MODEL = os.getenv("INDEXING_MODEL",  "qwen2.5:4b")   # entity extraction / graph building
-ANSWER_MODEL   = os.getenv("ANSWER_MODEL",    "phi4-mini")     # query answering
-EMBED_MODEL    = os.getenv("EMBED_MODEL",     "nomic-embed-text")
-OLLAMA_HOST    = os.getenv("OLLAMA_HOST",     "http://localhost:11434")
+# ── Config ────────────────────────────────────────────────────────────────────
+LLM_MODEL      = os.getenv("LLM_MODEL",      "phi4-mini:latest")
+EMBED_MODEL    = os.getenv("EMBED_MODEL",    "nomic-embed-text")
+OLLAMA_HOST    = os.getenv("OLLAMA_HOST",    "http://localhost:11434")
 EMBED_DIM      = int(os.getenv("EMBED_DIM",  "768"))
-NUM_CTX        = int(os.getenv("NUM_CTX",    "32768"))          # must be ≥32k for LightRAG
+NUM_CTX        = int(os.getenv("NUM_CTX",    "4096"))
+PDF_PAGE_BATCH = int(os.getenv("PDF_PAGE_BATCH", "3"))
+NUM_PREDICT    = int(os.getenv("NUM_PREDICT", "-1"))
+
+_BASE = OLLAMA_HOST.rstrip("/")
+
+# ── Call counters (module-level, lightweight telemetry) ───────────────────────
+_llm_call_count   = 0
+_embed_call_count = 0
 
 
+# ── Ollama helpers (direct REST — no lightrag wrappers) ───────────────────────
+async def _ollama_chat(
+    prompt: str,
+    system_prompt: str | None = None,
+    history_messages: list | None = None,
+    **kwargs,          # absorb everything LightRAG injects
+) -> str:
+    global _llm_call_count
+    _llm_call_count += 1
+    call_id = _llm_call_count
+
+    full_prompt = ""
+    if system_prompt:
+        full_prompt += f"{system_prompt}\n\n"
+    for msg in (history_messages or []):
+        if isinstance(msg, dict):
+            role    = msg.get("role", "user").capitalize()
+            content = msg.get("content", "")
+            full_prompt += f"{role}: {content}\n"
+    full_prompt += prompt
+
+    prompt_tokens_approx = len(full_prompt) // 4   # rough char→token estimate
+    log.info(
+        "[LLM #%d] → %s | prompt ~%d tokens | history=%d msgs",
+        call_id, LLM_MODEL, prompt_tokens_approx, len(history_messages or []),
+    )
+    log.debug("[LLM #%d] Full prompt:\n%s", call_id, full_prompt)
+
+    t0 = time.perf_counter()
+    async with aiohttp.ClientSession() as s:
+        async with s.post(
+            f"{_BASE}/api/generate",
+            json={
+                "model":  LLM_MODEL,
+                "prompt": full_prompt,
+                "stream": False,
+                "options": {"num_ctx": NUM_CTX, "num_predict": NUM_PREDICT},
+                "think":  False,
+            },
+            timeout=aiohttp.ClientTimeout(total=300),
+        ) as resp:
+            resp.raise_for_status()
+            data = await resp.json(content_type=None)
+
+    elapsed       = time.perf_counter() - t0
+    response_text = data.get("response", "")
+    resp_tokens   = data.get("eval_count",        len(response_text) // 4)
+    prompt_eval   = data.get("prompt_eval_count", prompt_tokens_approx)
+    tps           = resp_tokens / elapsed if elapsed > 0 else 0
+
+    log.info(
+        "[LLM #%d] ← done | %.1fs | prompt=%d tok | response=%d tok | %.1f tok/s",
+        call_id, elapsed, prompt_eval, resp_tokens, tps,
+    )
+    log.debug("[LLM #%d] Response:\n%s", call_id, response_text)
+
+    return response_text
+
+
+async def _ollama_embed(texts: list[str]) -> np.ndarray:
+    """Call /api/embed directly — bypasses LightRAG's EmbeddingFunc validator."""
+    global _embed_call_count
+    _embed_call_count += 1
+    call_id = _embed_call_count
+
+    log.debug("[EMBED #%d] → %s | %d text(s)", call_id, EMBED_MODEL, len(texts))
+
+    t0 = time.perf_counter()
+    async with aiohttp.ClientSession() as s:
+        async with s.post(
+            f"{_BASE}/api/embed",
+            json={"model": EMBED_MODEL, "input": texts},
+            timeout=aiohttp.ClientTimeout(total=60),
+        ) as resp:
+            resp.raise_for_status()
+            data = await resp.json(content_type=None)
+    elapsed = time.perf_counter() - t0
+
+    embeddings = data.get("embeddings") or data.get("embedding") or []
+    arr = np.array(embeddings, dtype=np.float32)
+
+    if arr.ndim == 1:
+        arr = arr.reshape(1, -1)
+
+    log.debug("[EMBED #%d] ← shape=%s | %.2fs", call_id, arr.shape, elapsed)
+
+    if arr.shape[1] != EMBED_DIM:
+        log.error(
+            "[EMBED #%d] Dimension mismatch: model returned %d, expected %d. "
+            "Set EMBED_DIM=%d and delete rag_storage/ before restarting.",
+            call_id, arr.shape[1], EMBED_DIM, arr.shape[1],
+        )
+        raise ValueError(
+            f"{EMBED_MODEL} returned dim={arr.shape[1]} but EMBED_DIM={EMBED_DIM}. "
+            f"Set EMBED_DIM={arr.shape[1]}, delete rag_storage/, restart."
+        )
+    return arr
+
+
+def _make_embedding_func() -> EmbeddingFunc:
+    return EmbeddingFunc(
+        embedding_dim=EMBED_DIM,
+        max_token_size=8192,
+        func=_ollama_embed,
+    )
+
+
+# ── Ollama connectivity check ─────────────────────────────────────────────────
+async def _check_ollama():
+    log.info("Checking Ollama connectivity at %s …", _BASE)
+    try:
+        async with aiohttp.ClientSession() as s:
+            async with s.get(
+                f"{_BASE}/api/tags",
+                timeout=aiohttp.ClientTimeout(total=10),
+            ) as resp:
+                resp.raise_for_status()
+                data   = await resp.json(content_type=None)
+                models = [m["name"] for m in data.get("models", [])]
+                log.info("Ollama reachable | available models: %s", models)
+
+                req = LLM_MODEL.split(":")[0]
+                if not any(m == LLM_MODEL or m.split(":")[0] == req for m in models):
+                    log.error(
+                        "Required model '%s' not found. Pull it with: ollama pull %s",
+                        LLM_MODEL, LLM_MODEL,
+                    )
+                    raise RuntimeError(
+                        f"Model '{LLM_MODEL}' not found. Run: ollama pull {LLM_MODEL}"
+                    )
+                log.info("Model '%s' confirmed available", LLM_MODEL)
+    except aiohttp.ClientConnectorError:
+        log.critical("Cannot reach Ollama at %s — is 'ollama serve' running?", _BASE)
+        raise RuntimeError(
+            f"Cannot reach Ollama at {_BASE}. Run: ollama serve"
+        )
+
+
+# ── RAGEngine ─────────────────────────────────────────────────────────────────
 class RAGEngine:
-    """Wraps LightRAG with dual-model Ollama setup and Docling pre-processing."""
 
     def __init__(self, storage_dir: str = "rag_storage"):
         self.storage_dir = Path(storage_dir)
         self.storage_dir.mkdir(parents=True, exist_ok=True)
         self.rag: LightRAG | None = None
         self._converter = self._build_converter()
+        log.info(
+            "RAGEngine created | storage=%s | llm=%s | embed=%s | dim=%d | ctx=%d",
+            self.storage_dir, LLM_MODEL, EMBED_MODEL, EMBED_DIM, NUM_CTX,
+        )
 
-    # ── Docling document converter ────────────────────────────────────────────
+    # ── Docling ───────────────────────────────────────────────────────────────
     @staticmethod
     def _build_converter() -> DocumentConverter:
+        log.debug("Building Docling DocumentConverter (OCR=off, tables=off)")
         pdf_opts = PdfPipelineOptions()
-        pdf_opts.do_ocr          = False   # set True if you have scanned PDFs
-        pdf_opts.do_table_structure = True
+        pdf_opts.do_ocr             = False
+        pdf_opts.do_table_structure = False
+        for attr in ("generate_picture_images", "generate_page_images"):
+            if hasattr(pdf_opts, attr):
+                setattr(pdf_opts, attr, False)
         return DocumentConverter(
-            format_options={
-                InputFormat.PDF: PdfFormatOption(pipeline_options=pdf_opts),
-            }
+            format_options={InputFormat.PDF: PdfFormatOption(pipeline_options=pdf_opts)}
         )
+    def _save_chunk_meta(self, path: Path, chunks_meta: list[dict]):
+        """Save chunk→page mapping next to the graph storage."""
+        meta_dir  = self.storage_dir / "chunk_meta"
+        meta_dir.mkdir(exist_ok=True)
+        meta_file = meta_dir / f"{path.stem}.json"
+        with open(meta_file, "w", encoding="utf-8") as f:
+            json.dump(chunks_meta, f, indent=2)
+        log.info("Chunk metadata saved: %s (%d chunks)", meta_file, len(chunks_meta))
 
-    # ── Embedding function (nomic-embed-text via Ollama) ──────────────────────
-    def _make_embedding_func(self) -> EmbeddingFunc:
-        async def _embed(texts: list[str]) -> np.ndarray:
-            return await ollama_embed(
-                texts,
-                embed_model=EMBED_MODEL,
-                host=OLLAMA_HOST,
-            )
+    def load_all_chunk_meta(self) -> list[dict]:
+        """Load all chunk metadata for all ingested files."""
+        meta_dir = self.storage_dir / "chunk_meta"
+        if not meta_dir.exists():
+            return []
+        all_meta = []
+        for meta_file in meta_dir.glob("*.json"):
+            try:
+                with open(meta_file, encoding="utf-8") as f:
+                    all_meta.extend(json.load(f))
+            except Exception as exc:
+                log.warning("Could not load chunk meta %s: %s", meta_file, exc)
+        return all_meta
+    # ── Storage helpers ───────────────────────────────────────────────────────
+    def wipe_storage(self):
+        log.warning("Wiping RAG storage at %s", self.storage_dir)
+        shutil.rmtree(self.storage_dir, ignore_errors=True)
+        self.storage_dir.mkdir(parents=True, exist_ok=True)
+        log.info("Storage wiped and recreated: %s", self.storage_dir)
 
-        return EmbeddingFunc(
-            embedding_dim=EMBED_DIM,
-            max_token_size=8192,
-            func=_embed,
-        )
+    def _check_and_wipe_if_dim_mismatch(self):
+        vdb = self.storage_dir / "vdb_entities.json"
+        if not vdb.exists():
+            log.debug("No existing vector DB found — fresh start")
+            return
+        try:
+            with open(vdb, encoding="utf-8") as f:
+                data = json.load(f)
+            stored = data.get("embedding_dim")
+            if stored is None:
+                log.debug("No embedding_dim recorded in vdb_entities.json")
+                return
+            if int(stored) != EMBED_DIM:
+                log.warning(
+                    "Embedding dim mismatch: stored=%s, configured=%d — wiping storage",
+                    stored, EMBED_DIM,
+                )
+                self.wipe_storage()
+            else:
+                log.debug(
+                    "Embedding dim OK: stored=%s matches EMBED_DIM=%d", stored, EMBED_DIM,
+                )
+        except Exception as exc:
+            log.warning("Could not read stored embedding_dim: %s", exc)
 
-    # ── Indexing LLM wrapper (qwen4b) ─────────────────────────────────────────
-    @staticmethod
-    def _indexing_llm():
-        """
-        Returns an async callable compatible with LightRAG's llm_model_func
-        signature.  Used for graph/entity extraction (heavier context).
-        """
-        async def _call(prompt: str, system_prompt: str | None = None,
-                        history_messages: list | None = None, **kwargs) -> str:
-            # Strip keys that LightRAG may inject but ollama_model_complete doesn't accept
-            kwargs.pop("model", None)
-            return await ollama_model_complete(
-                prompt,
-                system_prompt=system_prompt,
-                history_messages=history_messages or [],
-                host=OLLAMA_HOST,
-                model=INDEXING_MODEL,
-                options={"num_ctx": NUM_CTX},
-                **kwargs,
-            )
-        return _call
-
-    # ── Answer LLM wrapper (phi4-mini) ────────────────────────────────────────
-    @staticmethod
-    def _answer_llm():
-        """Lighter model used only at query time."""
-        async def _call(prompt: str, system_prompt: str | None = None,
-                        history_messages: list | None = None, **kwargs) -> str:
-            kwargs.pop("model", None)
-            return await ollama_model_complete(
-                prompt,
-                system_prompt=system_prompt,
-                history_messages=history_messages or [],
-                host=OLLAMA_HOST,
-                model=ANSWER_MODEL,
-                options={"num_ctx": NUM_CTX},
-                **kwargs,
-            )
-        return _call
-
-    # ── Initialise LightRAG ───────────────────────────────────────────────────
+    # ── Initialise ────────────────────────────────────────────────────────────
     async def initialise(self):
-        log.info("Initialising LightRAG  (indexing=%s, answer=%s, embed=%s)",
-                 INDEXING_MODEL, ANSWER_MODEL, EMBED_MODEL)
+        log.info(
+            "Initialising LightRAG 1.5.3 | llm=%s | embed=%s | dim=%d | ctx=%d | num_predict=%d",
+            LLM_MODEL, EMBED_MODEL, EMBED_DIM, NUM_CTX, NUM_PREDICT,
+        )
+        await _check_ollama()
+        self._check_and_wipe_if_dim_mismatch()
 
-        # Detect which kwargs the installed LightRAG version accepts
-        import inspect
-        _sig = inspect.signature(LightRAG.__init__).parameters
-
-        init_kwargs = dict(
+        log.debug("Creating LightRAG instance …")
+        self.rag = LightRAG(
             working_dir=str(self.storage_dir),
-            llm_model_func=self._indexing_llm(),
-            embedding_func=self._make_embedding_func(),
+            llm_model_func=_ollama_chat,
+            embedding_func=_make_embedding_func(),
+            max_parallel_insert=1,
+        )
+        await self.rag.initialize_storages()
+        log.info("LightRAG initialised successfully")
+
+    # ── PDF helpers ───────────────────────────────────────────────────────────
+    @staticmethod
+    def _count_pdf_pages(path: Path) -> int | None:
+        try:
+            import pypdf
+            with open(path, "rb") as fh:
+                n = len(pypdf.PdfReader(fh).pages)
+            log.debug("Page count via pypdf: %d — %s", n, path.name)
+            return n
+        except Exception:
+            pass
+        try:
+            import pymupdf
+            doc = pymupdf.open(str(path))
+            n = doc.page_count; doc.close()
+            log.debug("Page count via pymupdf: %d — %s", n, path.name)
+            return n
+        except Exception:
+            pass
+        log.warning("Could not determine page count for %s", path.name)
+        return None
+
+    @staticmethod
+    def _fallback_pdf_text(path: Path) -> str:
+        log.warning("Using fallback text extraction for %s", path.name)
+        try:
+            import pypdf
+            text = "\n\n".join(
+                p.extract_text() or "" for p in pypdf.PdfReader(str(path)).pages
+            )
+            log.info("Fallback (pypdf) extracted %d chars from %s", len(text), path.name)
+            return text
+        except Exception as exc:
+            log.debug("pypdf fallback failed: %s", exc)
+        try:
+            import pymupdf
+            doc = pymupdf.open(str(path))
+            text = "\n\n".join(doc[i].get_text() for i in range(doc.page_count))
+            doc.close()
+            log.info("Fallback (pymupdf) extracted %d chars from %s", len(text), path.name)
+            return text
+        except Exception as exc:
+            log.debug("pymupdf fallback failed: %s", exc)
+        log.error("All extraction methods failed for %s", path.name)
+        return f"[Could not extract text from {path.name}]"
+
+    @staticmethod
+    def _collect_entities(doc, entities: list[dict]):
+        try:
+            before = len(entities)
+            for item, _ in doc.iterate_items():
+                label = getattr(item, "label", None)
+                txt   = getattr(item, "text",  "") or ""
+                if label in ("section_header", "title") and txt.strip():
+                    entities.append({"type": "HEADING", "text": txt.strip()})
+            added = len(entities) - before
+            if added:
+                log.debug("Collected %d heading entities from doc chunk", added)
+        except Exception as exc:
+            log.debug("Entity collection skipped: %s", exc)
+
+    # ── Docling extraction ────────────────────────────────────────────────────
+    def _docling_extract(self, path: Path) -> tuple[str, list[dict], list[dict]]:
+        log.info("Starting Docling extraction: %s", path.name)
+        entities:    list[dict] = []
+        chunks_meta: list[dict] = []   # ← new
+        t0    = time.perf_counter()
+        total = (
+            self._count_pdf_pages(path) if path.suffix.lower() == ".pdf" else None
         )
 
-        # These params exist in older versions but were removed in newer ones
-        if "llm_model_name" in _sig:
-            init_kwargs["llm_model_name"] = INDEXING_MODEL
-        if "llm_model_max_async" in _sig:
-            init_kwargs["llm_model_max_async"] = 2
-        if "llm_model_max_token_size" in _sig:
-            init_kwargs["llm_model_max_token_size"] = 8192
-        if "llm_model_kwargs" in _sig:
-            init_kwargs["llm_model_kwargs"] = {
-                "host": OLLAMA_HOST,
-                "options": {"num_ctx": NUM_CTX},
-            }
+        if total is None:
+            try:
+                result = self._converter.convert(str(path))
+                text   = result.document.export_to_markdown()
+                self._collect_entities(result.document, entities)
+                chunks_meta.append({"source": path.name, "page_start": 1, "page_end": 1})
+                log.info("Docling done: %d chars, %d entities, %.1fs — %s",
+                        len(text), len(entities), time.perf_counter() - t0, path.name)
+                return text, entities, chunks_meta
+            except Exception as exc:
+                log.warning("Docling single-pass failed (%s) — using fallback", exc)
+                return self._fallback_pdf_text(path), [], []
 
-        log.info("LightRAG init params: %s", list(init_kwargs.keys()))
-        self.rag = LightRAG(**init_kwargs)
+        n_batches = (total + PDF_PAGE_BATCH - 1) // PDF_PAGE_BATCH
+        log.info("%s: %d pages | batch_size=%d | %d batches",
+                path.name, total, PDF_PAGE_BATCH, n_batches)
+        chunks: list[str] = []
 
-        # LightRAG >= 1.3 requires async init
-        if hasattr(self.rag, "ainit"):
-            await self.rag.ainit()
-        log.info("LightRAG initialised ✓")
+        for batch_idx, start in enumerate(range(0, total, PDF_PAGE_BATCH), 1):
+            end     = min(start + PDF_PAGE_BATCH, total)
+            t_batch = time.perf_counter()
+            log.info("Batch %d/%d — pages %d–%d | %s",
+                    batch_idx, n_batches, start + 1, end, path.name)
+            try:
+                result = self._converter.convert(str(path), page_range=(start + 1, end))
+                chunk  = result.document.export_to_markdown()
+                if chunk.strip():
+                    chunks.append(chunk)
+                    chunks_meta.append({          # ← record page range
+                        "source":     path.name,
+                        "file_path":  str(path),
+                        "page_start": start + 1,
+                        "page_end":   end,
+                        "chunk_idx":  batch_idx,
+                    })
+                    log.debug("Batch %d/%d — %d chars in %.1fs",
+                            batch_idx, n_batches, len(chunk), time.perf_counter() - t_batch)
+                self._collect_entities(result.document, entities)
+                del result; gc.collect()
+            except Exception as exc:
+                log.warning("Batch %d/%d failed: %s — pypdf fallback", batch_idx, n_batches, exc)
+                try:
+                    import pypdf
+                    reader = pypdf.PdfReader(str(path))
+                    pages  = [reader.pages[i].extract_text() or ""
+                            for i in range(start, min(end, len(reader.pages)))]
+                    fallback_text = "\n\n".join(pages)
+                    chunks.append(fallback_text)
+                    chunks_meta.append({
+                        "source":     path.name,
+                        "file_path":  str(path),
+                        "page_start": start + 1,
+                        "page_end":   end,
+                        "chunk_idx":  batch_idx,
+                        "fallback":   True,
+                    })
+                    log.info("Batch %d/%d pypdf fallback: %d chars", batch_idx, n_batches, len(fallback_text))
+                except Exception as fb_exc:
+                    log.error("Batch %d/%d all extraction failed: %s", batch_idx, n_batches, fb_exc)
+                gc.collect()
 
-    # ── Docling text + entity extraction ─────────────────────────────────────
-    def _docling_extract(self, path: Path) -> tuple[str, list[dict]]:
-        """
-        Returns (plain_text, entities).
-        Docling exports structured markdown; we also pull table/heading entities.
-        """
-        result = self._converter.convert(str(path))
-        doc    = result.document
+        text = "\n\n".join(chunks) or self._fallback_pdf_text(path)
+        log.info("Docling complete: %d chars, %d entities, %.1fs — %s",
+                len(text), len(entities), time.perf_counter() - t0, path.name)
+        return text, entities, chunks_meta
 
-        # Full text (markdown-flavoured for best entity context)
-        text = doc.export_to_markdown()
-
-        # Entity candidates from headings, tables, key-value pairs
-        entities: list[dict] = []
-        for item, _ in doc.iterate_items():
-            label = getattr(item, "label", None)
-            if label in ("section_header", "title"):
-                entities.append({"type": "HEADING", "text": item.text})
-            elif label == "table":
-                entities.append({"type": "TABLE", "text": getattr(item, "text", "")})
-
-        log.info("Docling extracted %d chars, %d entity hints from %s",
-                 len(text), len(entities), path.name)
-        return text, entities
-
-    # ── Ingest a file into the graph ──────────────────────────────────────────
+    # ── Ingest ────────────────────────────────────────────────────────────────
     async def ingest_file(self, path: Path) -> str:
         if self.rag is None:
             raise RuntimeError("Call initialise() first")
 
-        suffix = path.suffix.lower()
-        if suffix in (".txt", ".md"):
-            text     = path.read_text(encoding="utf-8", errors="replace")
-            entities = []
-        else:
-            text, entities = self._docling_extract(path)
+        log.info("Ingesting file: %s", path)
+        t0 = time.perf_counter()
 
-        # Prepend structured entity hints as a header block
+        if path.suffix.lower() in (".txt", ".md"):
+            log.debug("Plain text file — skipping Docling")
+            text, entities = path.read_text(encoding="utf-8", errors="replace"), []
+            chunks_meta = [{"content": text, "source": path.name, "page": 1}]
+        else:
+            text, entities, chunks_meta = self._docling_extract(path)
+
         if entities:
-            header = "=== DOCUMENT STRUCTURE HINTS ===\n"
-            for e in entities[:40]:           # cap to avoid huge preambles
-                header += f"[{e['type']}] {e['text']}\n"
-            header += "=== END HINTS ===\n\n"
+            header  = "=== DOCUMENT STRUCTURE ===\n"
+            header += "\n".join(f"[{e['type']}] {e['text']}" for e in entities[:40])
+            header += "\n=== END ===\n\n"
             text = header + text
 
-        # LightRAG >= 1.3 exposes ainsert
-        if hasattr(self.rag, "ainsert"):
-            await self.rag.ainsert(text)
-        else:
-            await asyncio.get_event_loop().run_in_executor(
-                None, self.rag.insert, text
-            )
+        log.info("Sending %d chars to LightRAG ainsert …", len(text))
+        await self.rag.ainsert(text, file_paths=str(path))
+        if chunks_meta:
+            self._save_chunk_meta(path, chunks_meta)
+        elapsed = time.perf_counter() - t0
+        summary = f"Ingested {len(text):,} chars, {len(entities)} entities in {elapsed:.1f}s"
+        log.info("Ingest complete — %s | %s", path.name, summary)
+        return summary
 
-        return f"Ingested {len(text):,} chars with {len(entities)} Docling entities"
-
-    # ── Query / answer ────────────────────────────────────────────────────────
+    # ── Query ─────────────────────────────────────────────────────────────────
     async def answer(self, query: str, mode: str = "hybrid",
                      summarise: bool = False) -> str:
         if self.rag is None:
             raise RuntimeError("Call initialise() first")
 
-        # Switch to answer LLM for query time
-        self.rag.llm_model_func = self._answer_llm()
-
         if summarise:
             query = (
-                f"Please provide a comprehensive summary answering: {query}\n"
-                "Include key entities, relationships, and supporting evidence."
+                f"Provide a comprehensive summary answering: {query}\n"
+                "Include key entities, relationships, and evidence."
             )
 
-        param = QueryParam(mode=mode)
+        log.info("Query [mode=%s summarise=%s]: %.120s", mode, summarise, query)
+        t0     = time.perf_counter()
+        result = await self.rag.aquery(query, param=QueryParam(mode=mode))
+        elapsed     = time.perf_counter() - t0
+        answer_text = str(result)
+        log.info(
+            "Query answered in %.1fs | response=%d chars", elapsed, len(answer_text),
+        )
+        log.debug("Answer:\n%s", answer_text)
+        return answer_text
 
-        if hasattr(self.rag, "aquery"):
-            result = await self.rag.aquery(query, param=param)
-        else:
-            loop   = asyncio.get_event_loop()
-            result = await loop.run_in_executor(
-                None, lambda: self.rag.query(query, param=param)
-            )
-
-        # Restore indexing LLM for future inserts
-        self.rag.llm_model_func = self._indexing_llm()
-        return str(result)
-
-    # ── Export knowledge graph ─────────────────────────────────────────────────
+    # ── Graph export ──────────────────────────────────────────────────────────
     async def export_graph(self) -> dict[str, Any]:
-        """Return {nodes, edges} for D3 visualisation."""
         if self.rag is None:
+            log.warning("export_graph called before initialise()")
             return {"nodes": [], "edges": []}
 
         graph_path = self.storage_dir / "graph_chunk_entity_relation.graphml"
         if not graph_path.exists():
+            log.warning("Graph file not found at %s — graph not yet built", graph_path)
             return {"nodes": [], "edges": [], "note": "Graph not yet built"}
 
+        log.info("Exporting knowledge graph from %s", graph_path)
         try:
             import networkx as nx
-            G = nx.read_graphml(str(graph_path))
+            G     = nx.read_graphml(str(graph_path))
             nodes = [{"id": n, **d} for n, d in G.nodes(data=True)]
-            edges = [{"source": u, "target": v, **d}
-                     for u, v, d in G.edges(data=True)]
-            return {"nodes": nodes[:500], "edges": edges[:1000]}   # cap for browser
+            edges = [{"source": u, "target": v, **d} for u, v, d in G.edges(data=True)]
+            log.info(
+                "Graph export: %d/%d nodes, %d/%d edges (caps: 500/1000)",
+                min(len(nodes), 500), G.number_of_nodes(),
+                min(len(edges), 1000), G.number_of_edges(),
+            )
+            return {"nodes": nodes[:500], "edges": edges[:1000]}
         except ImportError:
-            return {"error": "networkx not installed – run: pip install networkx"}
+            log.error("networkx not installed — run: pip install networkx")
+            return {"error": "pip install networkx"}
         except Exception as exc:
+            log.error("Graph export failed: %s", exc, exc_info=True)
             return {"error": str(exc)}

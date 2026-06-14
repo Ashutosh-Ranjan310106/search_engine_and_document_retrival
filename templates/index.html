@@ -96,9 +96,16 @@
       <div id="answer-text" class="answer-text"></div>
     </div>
 
+    <div class="citations-section">
+      <h4 class="citations-title">Sources</h4>
+      <ul id="citation-list" class="citation-list"></ul>
+    </div>
+    
     <div id="answer-loader" class="answer-loader hidden">
       <span class="spinner"></span> Querying graph…
     </div>
+
+
 
     <!-- History -->
     <div id="history-section" class="history-section hidden">
@@ -121,8 +128,6 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"
-        integrity="sha512-M7nHCiNUOwFt6Us3r8alutZLm9qMt4s9951uo8jqO4UwJ1hziseL6O3ndFyigx6+LREfZqnhHxYjKRJ8ZQ69A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="{{ url_for('static', filename='js/graph.js') }}"></script>
+<!-- D3 already loaded in base.html — do not load again -->
+<script src="{{ url_for('static', filename='js/graph.js') }}" defer></script>
 {% endblock %}

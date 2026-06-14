@@ -14,14 +14,22 @@ import threading
 from pathlib import Path
 from datetime import datetime
 
-import nest_asyncio
 from flask import Flask, render_template, request, jsonify, redirect, url_for, flash
 from werkzeug.utils import secure_filename
 
 from rag_engine import RAGEngine
+# Persistent async loop
+ASYNC_LOOP = asyncio.new_event_loop()
 
+def _run_loop():
+    asyncio.set_event_loop(ASYNC_LOOP)
+    ASYNC_LOOP.run_forever()
+
+threading.Thread(
+    target=_run_loop,
+    daemon=True
+).start()
 # ── patch event loop so async LightRAG works inside Flask ──────────────────────
-nest_asyncio.apply()
 Path("logs").mkdir(exist_ok=True)      # ← add this line
 Path("uploads").mkdir(exist_ok=True)   # good to do this here too
 Path("rag_storage").mkdir(exist_ok=True)
@@ -59,14 +67,24 @@ def get_engine() -> RAGEngine:
     if _rag_engine is None:
         raise RuntimeError("RAG engine not yet initialised")
     return _rag_engine
-
+def run_async(coro):
+    future = asyncio.run_coroutine_threadsafe(
+        coro,
+        ASYNC_LOOP
+    )
+    return future.result()
 
 def _background_init():
     global _rag_engine
     _init_status["progress"] = "Initialising LightRAG + Ollama models…"
     try:
         engine = RAGEngine(storage_dir="rag_storage")
-        asyncio.run(engine.initialise())
+        future = asyncio.run_coroutine_threadsafe(
+            engine.initialise(),
+            ASYNC_LOOP
+        )
+
+        future.result()
         with _rag_lock:
             _rag_engine = engine
         _init_status["ready"] = True
@@ -138,9 +156,9 @@ def upload():
 
         try:
             engine = get_engine()
-            loop   = asyncio.new_event_loop()
-            msg    = loop.run_until_complete(engine.ingest_file(fpath))
-            loop.close()
+            msg = run_async(
+                engine.ingest_file(fpath)
+            )
             results.append({"file": fname, "status": "indexed", "detail": msg})
             log.info("Indexed: %s", fname)
         except Exception as exc:
@@ -174,9 +192,7 @@ def query():
 
     try:
         engine = get_engine()
-        loop   = asyncio.new_event_loop()
-        answer = loop.run_until_complete(engine.answer(q, mode=mode, summarise=summarise))
-        loop.close()
+        answer = answer = run_async(engine.answer(q, mode=mode, summarise=summarise))
         return jsonify({"answer": answer, "mode": mode, "query": q})
     except Exception as exc:
         log.exception("Query failed")
@@ -190,13 +206,21 @@ def graph():
         return jsonify({"error": "Not ready"}), 503
     try:
         engine = get_engine()
-        loop   = asyncio.new_event_loop()
-        data   = loop.run_until_complete(engine.export_graph())
-        loop.close()
+        data   = run_async(engine.export_graph())
         return jsonify(data)
     except Exception as exc:
         return jsonify({"error": str(exc)}), 500
 
-
+@app.route("/citations")
+def citations():
+    """Return all chunk→page citations for the frontend."""
+    if not _init_status["ready"]:
+        return jsonify({"error": "Not ready"}), 503
+    try:
+        engine = get_engine()
+        meta   = engine.load_all_chunk_meta()
+        return jsonify({"citations": meta})
+    except Exception as exc:
+        return jsonify({"error": str(exc)}), 500
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000, use_reloader=False)

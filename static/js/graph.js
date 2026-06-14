@@ -1,7 +1,10 @@
 /* ── DocRAG graph.js — D3 force-directed knowledge graph ─────────────────── */
 (function () {
   "use strict";
-
+  if (typeof d3 === "undefined") {
+    console.error("D3 not loaded — check base.html script order");
+    return;
+  }
   const loadBtn       = document.getElementById("load-graph-btn");
   const container     = document.getElementById("graph-container");
   const placeholder   = container.querySelector(".graph-placeholder");
@@ -39,7 +42,7 @@
     container.innerHTML = "";
 
     const W = container.clientWidth  || 900;
-    const H = container.clientHeight || 500;
+    const H = container.clientHeight || 600;  /* was 500, matches CSS */
 
     const svg = d3.select(container)
       .append("svg")

@@ -1,12 +1,37 @@
 /* ── DocRAG app.js ───────────────────────────────────────────────────────── */
 (function () {
   "use strict";
-
+  // ── Citations ──────────────────────────────────────────────────────────────
+  const citationList = document.getElementById("citation-list");
+  function loadCitations() {
+    if (!citationList) return;
+    fetch("/citations")
+      .then(r => r.json())
+      .then(data => {
+        if (!data.citations || !data.citations.length) {
+          citationList.innerHTML = '<li class="citation-item citation-item--empty">No source citations available.</li>';
+          return;
+        }
+        citationList.innerHTML = "";
+        data.citations.forEach(c => {
+          const li = document.createElement("li");
+          li.className = "citation-item";
+          li.innerHTML = `
+            <span class="citation-file">📄 ${escHtml(c.source)}</span>
+            <span class="citation-pages">pp. ${c.page_start}–${c.page_end}</span>
+            ${c.fallback ? '<span class="citation-warn">⚠ fallback extract</span>' : ''}
+          `;
+          citationList.appendChild(li);
+        });
+      })
+      .catch(err => {
+        if (citationList) citationList.innerHTML = `<li class="citation-item">Failed to load citations: ${err}</li>`;
+      });
+  }
   // ── Engine status polling ─────────────────────────────────────────────────
   const badge   = document.getElementById("engine-badge");
   const askBtn  = document.getElementById("ask-btn");
   let engineReady = false;
-
   function pollStatus() {
     fetch("/status")
       .then(r => r.json())
@@ -122,7 +147,8 @@
           answerBadge.className = "badge badge--ready";
         }
         answerCard.classList.remove("hidden");
-
+        answerCard.classList.remove("hidden");
+        loadCitations();
         // Add to history
         history.unshift({ q, mode: currentMode, answer: data.answer || data.error });
         renderHistory();
@@ -132,6 +158,7 @@
         askBtn.disabled = false;
         answerText.textContent = "Request failed: " + err;
         answerCard.classList.remove("hidden");
+        answerCard.classList.remove("hidden")
       });
   }
 
