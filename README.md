@@ -41,7 +41,6 @@ cd ..
 ## 3 — Install remaining dependencies
 
 ```bash
-cd docrag
 pip install -r requirements.txt
 ```
 
