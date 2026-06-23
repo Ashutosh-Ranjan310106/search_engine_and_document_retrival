@@ -1,4 +1,4 @@
-venv/
-rag_storage/
-uploads/
-LightRAG/
+venv\
+rag_storage\
+uploads\
+__pycache__/*.pyc

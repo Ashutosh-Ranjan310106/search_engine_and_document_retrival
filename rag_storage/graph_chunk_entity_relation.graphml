@@ -1,0 +1,2390 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d11" for="edge" attr.name="created_at" attr.type="long"/>
+<key id="d10" for="edge" attr.name="file_path" attr.type="string"/>
+<key id="d9" for="edge" attr.name="source_id" attr.type="string"/>
+<key id="d8" for="edge" attr.name="keywords" attr.type="string"/>
+<key id="d7" for="edge" attr.name="description" attr.type="string"/>
+<key id="d6" for="edge" attr.name="weight" attr.type="double"/>
+<key id="d5" for="node" attr.name="created_at" attr.type="long"/>
+<key id="d4" for="node" attr.name="file_path" attr.type="string"/>
+<key id="d3" for="node" attr.name="source_id" attr.type="string"/>
+<key id="d2" for="node" attr.name="description" attr.type="string"/>
+<key id="d1" for="node" attr.name="entity_type" attr.type="string"/>
+<key id="d0" for="node" attr.name="entity_id" attr.type="string"/>
+<graph edgedefault="undirected"><node id="Factory Acceptance Test (FAT)">
+  <data key="d0">Factory Acceptance Test (FAT)</data>
+  <data key="d1">Procedure</data>
+  <data key="d2">Factory Acceptance Test (FAT)</data>
+  <data key="d3">chunk-e911d7807e809a91f813fae9f96b3bea</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Project">
+  <data key="d0">Project</data>
+  <data key="d1">TableEntity</data>
+  <data key="d2">Project</data>
+  <data key="d3">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="50,000 DWT Bulk Carrier">
+  <data key="d0">50,000 DWT Bulk Carrier</data>
+  <data key="d1">Value</data>
+  <data key="d2">50,000 DWT Bulk Carrier</data>
+  <data key="d3">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Hull No">
+  <data key="d0">Hull No</data>
+  <data key="d1">TableEntity</data>
+  <data key="d2">Hull No</data>
+  <data key="d3">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="HN-2026-045">
+  <data key="d0">HN-2026-045</data>
+  <data key="d1">Value</data>
+  <data key="d2">HN-2026-045</data>
+  <data key="d3">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Equipment ID">
+  <data key="d0">Equipment ID</data>
+  <data key="d1">TableEntity</data>
+  <data key="d2">Equipment ID</data>
+  <data key="d3">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="EQ00442">
+  <data key="d0">EQ00442</data>
+  <data key="d1">Value</data>
+  <data key="d2">EQ00442</data>
+  <data key="d3">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Equipment">
+  <data key="d0">Equipment</data>
+  <data key="d1">TableEntity</data>
+  <data key="d2">Equipment</data>
+  <data key="d3">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Main Switchboard">
+  <data key="d0">Main Switchboard</data>
+  <data key="d1">Value</data>
+  <data key="d2">Main Switchboard</data>
+  <data key="d3">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Manufacturer">
+  <data key="d0">Manufacturer</data>
+  <data key="d1">TableEntity</data>
+  <data key="d2">Manufacturer</data>
+  <data key="d3">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="ABB Marine Systems">
+  <data key="d0">ABB Marine Systems</data>
+  <data key="d1">Value</data>
+  <data key="d2">ABB Marine Systems</data>
+  <data key="d3">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="FAT Date">
+  <data key="d0">FAT Date</data>
+  <data key="d1">TableEntity</data>
+  <data key="d2">FAT Date</data>
+  <data key="d3">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="15-May-2026">
+  <data key="d0">15-May-2026</data>
+  <data key="d1">Value</data>
+  <data key="d2">15-May-2026</data>
+  <data key="d3">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Main Switchboard - Bulk Carrier Project">
+  <data key="d0">Main Switchboard - Bulk Carrier Project</data>
+  <data key="d1">SECTION</data>
+  <data key="d2">Document heading at level 1: Main Switchboard - Bulk Carrier Project</data>
+  <data key="d3">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="FAT Test Section 1">
+  <data key="d0">FAT Test Section 1</data>
+  <data key="d1">Procedure</data>
+  <data key="d2">FAT Test Section 1</data>
+  <data key="d3">chunk-8218b17b90878dbaed283d33b39cef5b</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="FAT Test Section 2">
+  <data key="d0">FAT Test Section 2</data>
+  <data key="d1">Procedure</data>
+  <data key="d2">FAT Test Section 2</data>
+  <data key="d3">chunk-0355b790f27da277cb89771a231f25c1</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="FAT Test Section 3">
+  <data key="d0">FAT Test Section 3</data>
+  <data key="d1">Procedure</data>
+  <data key="d2">FAT Test Section 3</data>
+  <data key="d3">chunk-f608594097b1740732f5d52f419a0321</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="FAT Test Section 4">
+  <data key="d0">FAT Test Section 4</data>
+  <data key="d1">Procedure</data>
+  <data key="d2">FAT Test Section 4</data>
+  <data key="d3">chunk-6bf490024d689d3a434af434c43e9cfa</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="FAT Test Section 5">
+  <data key="d0">FAT Test Section 5</data>
+  <data key="d1">Procedure</data>
+  <data key="d2">FAT Test Section 5</data>
+  <data key="d3">chunk-afcb3417cb1df4eb32f445bf30e6072a</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="FAT Test Section 6">
+  <data key="d0">FAT Test Section 6</data>
+  <data key="d1">Procedure</data>
+  <data key="d2">FAT Test Section 6</data>
+  <data key="d3">chunk-bb8b9dae1e798160cb67f029ccb80515</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="FAT Test Section 7">
+  <data key="d0">FAT Test Section 7</data>
+  <data key="d1">Procedure</data>
+  <data key="d2">FAT Test Section 7</data>
+  <data key="d3">chunk-fd33ccdacda82d65ecb1fcb3decdc479</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="FAT Test Section 8">
+  <data key="d0">FAT Test Section 8</data>
+  <data key="d1">Procedure</data>
+  <data key="d2">FAT Test Section 8</data>
+  <data key="d3">chunk-ce854df69d8ecdaa1521a86420f2fc6c</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="FAT Test Section 9">
+  <data key="d0">FAT Test Section 9</data>
+  <data key="d1">Procedure</data>
+  <data key="d2">FAT Test Section 9</data>
+  <data key="d3">chunk-77c0b72f0f6f68630caa533c77b609d5</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="FAT Test Section 10">
+  <data key="d0">FAT Test Section 10</data>
+  <data key="d1">Procedure</data>
+  <data key="d2">FAT Test Section 10</data>
+  <data key="d3">chunk-e76ad245418b4314f8db8ad4189bf9ad</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="No damage">
+  <data key="d0">No damage</data>
+  <data key="d1">Acceptance Criteria</data>
+  <data key="d2">No damage</data>
+  <data key="d3">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="No defects observed">
+  <data key="d0">No defects observed</data>
+  <data key="d1">Actual Result</data>
+  <data key="d2">No defects observed</data>
+  <data key="d3">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Insulation Resistance">
+  <data key="d0">Insulation Resistance</data>
+  <data key="d1">TableEntity</data>
+  <data key="d2">Insulation Resistance</data>
+  <data key="d3">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="&gt;1 M W">
+  <data key="d0">&gt;1 M W</data>
+  <data key="d1">Acceptance Criteria</data>
+  <data key="d2">&gt;1 M W</data>
+  <data key="d3">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="245 M W">
+  <data key="d0">245 M W</data>
+  <data key="d1">Actual Result</data>
+  <data key="d2">245 M W</data>
+  <data key="d3">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Continuity Test">
+  <data key="d0">Continuity Test</data>
+  <data key="d1">TableEntity</data>
+  <data key="d2">Continuity Test</data>
+  <data key="d3">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="100% continuity">
+  <data key="d0">100% continuity</data>
+  <data key="d1">Acceptance Criteria</data>
+  <data key="d2">100% continuity</data>
+  <data key="d3">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Verified">
+  <data key="d0">Verified</data>
+  <data key="d1">Actual Result</data>
+  <data key="d2">Verified</data>
+  <data key="d3">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Breaker Functional Test">
+  <data key="d0">Breaker Functional Test</data>
+  <data key="d1">TableEntity</data>
+  <data key="d2">Breaker Functional Test</data>
+  <data key="d3">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Operate correctly">
+  <data key="d0">Operate correctly</data>
+  <data key="d1">Acceptance Criteria</data>
+  <data key="d2">Operate correctly</data>
+  <data key="d3">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Successful">
+  <data key="d0">Successful</data>
+  <data key="d1">Actual Result</data>
+  <data key="d2">Successful</data>
+  <data key="d3">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Relay Calibration">
+  <data key="d0">Relay Calibration</data>
+  <data key="d1">TableEntity</data>
+  <data key="d2">Relay Calibration</data>
+  <data key="d3">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Within tolerance">
+  <data key="d0">Within tolerance</data>
+  <data key="d1">Acceptance Criteria</data>
+  <data key="d2">Within tolerance</data>
+  <data key="d3">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Alarm Verification">
+  <data key="d0">Alarm Verification</data>
+  <data key="d1">TableEntity</data>
+  <data key="d2">Alarm Verification</data>
+  <data key="d3">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="All alarms trigger">
+  <data key="d0">All alarms trigger</data>
+  <data key="d1">Acceptance Criteria</data>
+  <data key="d2">All alarms trigger</data>
+  <data key="d3">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Communication Test">
+  <data key="d0">Communication Test</data>
+  <data key="d1">TableEntity</data>
+  <data key="d2">Communication Test</data>
+  <data key="d3">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Stable communication">
+  <data key="d0">Stable communication</data>
+  <data key="d1">Acceptance Criteria</data>
+  <data key="d2">Stable communication</data>
+  <data key="d3">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Load Simulation">
+  <data key="d0">Load Simulation</data>
+  <data key="d1">TableEntity</data>
+  <data key="d2">Load Simulation</data>
+  <data key="d3">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="No abnormal behavior">
+  <data key="d0">No abnormal behavior</data>
+  <data key="d1">Acceptance Criteria</data>
+  <data key="d2">No abnormal behavior</data>
+  <data key="d3">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Stable operation">
+  <data key="d0">Stable operation</data>
+  <data key="d1">Actual Result</data>
+  <data key="d2">Stable operation</data>
+  <data key="d3">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Temperature Rise">
+  <data key="d0">Temperature Rise</data>
+  <data key="d1">TableEntity</data>
+  <data key="d2">Temperature Rise</data>
+  <data key="d3">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="&lt; 65°C">
+  <data key="d0">&lt; 65°C</data>
+  <data key="d1">Acceptance Criteria</data>
+  <data key="d2">&lt; 65°C</data>
+  <data key="d3">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="52°C">
+  <data key="d0">52°C</data>
+  <data key="d1">Actual Result</data>
+  <data key="d2">52°C</data>
+  <data key="d3">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Final Acceptance">
+  <data key="d0">Final Acceptance</data>
+  <data key="d1">TableEntity</data>
+  <data key="d2">Final Acceptance</data>
+  <data key="d3">chunk-34e3e4b849d229c69cc2cf9e8383ec39</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="All tests pass">
+  <data key="d0">All tests pass</data>
+  <data key="d1">Acceptance Criteria</data>
+  <data key="d2">All tests pass</data>
+  <data key="d3">chunk-34e3e4b849d229c69cc2cf9e8383ec39</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Accepted">
+  <data key="d0">Accepted</data>
+  <data key="d1">Actual Result</data>
+  <data key="d2">Accepted</data>
+  <data key="d3">chunk-34e3e4b849d229c69cc2cf9e8383ec39</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="PASS">
+  <data key="d0">PASS</data>
+  <data key="d1">Status</data>
+  <data key="d2">PASS</data>
+  <data key="d3">chunk-34e3e4b849d229c69cc2cf9e8383ec39</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Test Item">
+  <data key="d0">Test Item</data>
+  <data key="d1">Equipment</data>
+  <data key="d2">Test Item</data>
+  <data key="d3">chunk-34e3e4b849d229c69cc2cf9e8383ec39</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Visual Inspection">
+  <data key="d0">Visual Inspection</data>
+  <data key="d1">Procedure</data>
+  <data key="d2">Visual Inspection</data>
+  <data key="d3">chunk-34e3e4b849d229c69cc2cf9e8383ec39</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Detailed Test Results">
+  <data key="d0">Detailed Test Results</data>
+  <data key="d1">SECTION</data>
+  <data key="d2">Document heading at level 1: Detailed Test Results</data>
+  <data key="d3">chunk-34e3e4b849d229c69cc2cf9e8383ec39</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="NCR-001">
+  <data key="d0">NCR-001</data>
+  <data key="d1">TableEntity</data>
+  <data key="d2">NCR-001</data>
+  <data key="d3">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Label missing on feeder">
+  <data key="d0">Label missing on feeder</data>
+  <data key="d1">Description</data>
+  <data key="d2">Label missing on feeder</data>
+  <data key="d3">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Label installed">
+  <data key="d0">Label installed</data>
+  <data key="d1">Corrective Action</data>
+  <data key="d2">Label installed</data>
+  <data key="d3">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Closed">
+  <data key="d0">Closed</data>
+  <data key="d1">Status</data>
+  <data key="d2">Closed</data>
+  <data key="d3">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="NCR-002">
+  <data key="d0">NCR-002</data>
+  <data key="d1">TableEntity</data>
+  <data key="d2">NCR-002</data>
+  <data key="d3">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Drawing revision mismatch">
+  <data key="d0">Drawing revision mismatch</data>
+  <data key="d1">Description</data>
+  <data key="d2">Drawing revision mismatch</data>
+  <data key="d3">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Drawing updated">
+  <data key="d0">Drawing updated</data>
+  <data key="d1">Corrective Action</data>
+  <data key="d2">Drawing updated</data>
+  <data key="d3">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="NCR-003">
+  <data key="d0">NCR-003</data>
+  <data key="d1">TableEntity</data>
+  <data key="d2">NCR-003</data>
+  <data key="d3">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Cable tag unclear">
+  <data key="d0">Cable tag unclear</data>
+  <data key="d1">Description</data>
+  <data key="d2">Cable tag unclear</data>
+  <data key="d3">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Tag replaced">
+  <data key="d0">Tag replaced</data>
+  <data key="d1">Corrective Action</data>
+  <data key="d2">Tag replaced</data>
+  <data key="d3">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Corrective Action">
+  <data key="d0">Corrective Action</data>
+  <data key="d1">Procedure</data>
+  <data key="d2">Corrective Action</data>
+  <data key="d3">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="feeder">
+  <data key="d0">feeder</data>
+  <data key="d1">Equipment</data>
+  <data key="d2">feeder</data>
+  <data key="d3">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Factory Acceptance Test">
+  <data key="d0">Factory Acceptance Test</data>
+  <data key="d1">Procedure</data>
+  <data key="d2">Factory Acceptance Test</data>
+  <data key="d3">chunk-5b5d47241ce84a7bb484d68944935301</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="FAT activities">
+  <data key="d0">FAT activities</data>
+  <data key="d1">Procedure</data>
+  <data key="d2">FAT activities</data>
+  <data key="d3">chunk-5b5d47241ce84a7bb484d68944935301</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="owner representative">
+  <data key="d0">owner representative</data>
+  <data key="d1">Crew Role</data>
+  <data key="d2">owner representative</data>
+  <data key="d3">chunk-5b5d47241ce84a7bb484d68944935301</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="classification surveyor">
+  <data key="d0">classification surveyor</data>
+  <data key="d1">Crew Role</data>
+  <data key="d2">classification surveyor</data>
+  <data key="d3">chunk-5b5d47241ce84a7bb484d68944935301</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Factory Acceptance Test (FAT) Report">
+  <data key="d0">Factory Acceptance Test (FAT) Report</data>
+  <data key="d1">DOCUMENT</data>
+  <data key="d2">Document heading at level 0: Factory Acceptance Test (FAT) Report</data>
+  <data key="d3">chunk-5b5d47241ce84a7bb484d68944935301</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<node id="Non-Conformities">
+  <data key="d0">Non-Conformities</data>
+  <data key="d1">SECTION</data>
+  <data key="d2">Document heading at level 1: Non-Conformities</data>
+  <data key="d3">chunk-5b5d47241ce84a7bb484d68944935301</data>
+  <data key="d4">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d5">1782176762</data>
+</node>
+<edge source="Factory Acceptance Test (FAT)" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">1.0</data>
+  <data key="d7">"Factory Acceptance Test (FAT)" belongs to section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-e911d7807e809a91f813fae9f96b3bea</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Project" target="50,000 DWT Bulk Carrier">
+  <data key="d6">1.0</data>
+  <data key="d7">value</data>
+  <data key="d8">value</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Project" target="Main Switchboard - Bulk Carrier Project">
+  <data key="d6">1.0</data>
+  <data key="d7">"Project" belongs to section "Main Switchboard - Bulk Carrier Project"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Project" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Project" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="50,000 DWT Bulk Carrier" target="Main Switchboard - Bulk Carrier Project">
+  <data key="d6">1.0</data>
+  <data key="d7">"50,000 DWT Bulk Carrier" belongs to section "Main Switchboard - Bulk Carrier Project"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="50,000 DWT Bulk Carrier" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"50,000 DWT Bulk Carrier" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Hull No" target="HN-2026-045">
+  <data key="d6">1.0</data>
+  <data key="d7">value</data>
+  <data key="d8">value</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Hull No" target="Main Switchboard - Bulk Carrier Project">
+  <data key="d6">1.0</data>
+  <data key="d7">"Hull No" belongs to section "Main Switchboard - Bulk Carrier Project"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Hull No" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Hull No" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="HN-2026-045" target="Main Switchboard - Bulk Carrier Project">
+  <data key="d6">1.0</data>
+  <data key="d7">"HN-2026-045" belongs to section "Main Switchboard - Bulk Carrier Project"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="HN-2026-045" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"HN-2026-045" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Equipment ID" target="EQ00442">
+  <data key="d6">1.0</data>
+  <data key="d7">value</data>
+  <data key="d8">value</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Equipment ID" target="Main Switchboard - Bulk Carrier Project">
+  <data key="d6">1.0</data>
+  <data key="d7">"Equipment ID" belongs to section "Main Switchboard - Bulk Carrier Project"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Equipment ID" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Equipment ID" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="EQ00442" target="Main Switchboard - Bulk Carrier Project">
+  <data key="d6">1.0</data>
+  <data key="d7">"EQ00442" belongs to section "Main Switchboard - Bulk Carrier Project"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="EQ00442" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"EQ00442" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Equipment" target="Main Switchboard">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Equipment" target="Manufacturer">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Equipment" target="ABB Marine Systems">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Equipment" target="Main Switchboard - Bulk Carrier Project">
+  <data key="d6">1.0</data>
+  <data key="d7">"Equipment" belongs to section "Main Switchboard - Bulk Carrier Project"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Equipment" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Equipment" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Main Switchboard" target="Manufacturer">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Main Switchboard" target="ABB Marine Systems">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Main Switchboard" target="Main Switchboard - Bulk Carrier Project">
+  <data key="d6">1.0</data>
+  <data key="d7">"Main Switchboard" belongs to section "Main Switchboard - Bulk Carrier Project"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Main Switchboard" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Main Switchboard" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Manufacturer" target="ABB Marine Systems">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Manufacturer" target="Main Switchboard - Bulk Carrier Project">
+  <data key="d6">1.0</data>
+  <data key="d7">"Manufacturer" belongs to section "Main Switchboard - Bulk Carrier Project"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Manufacturer" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Manufacturer" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="ABB Marine Systems" target="Main Switchboard - Bulk Carrier Project">
+  <data key="d6">1.0</data>
+  <data key="d7">"ABB Marine Systems" belongs to section "Main Switchboard - Bulk Carrier Project"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="ABB Marine Systems" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"ABB Marine Systems" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT Date" target="15-May-2026">
+  <data key="d6">1.0</data>
+  <data key="d7">value</data>
+  <data key="d8">value</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT Date" target="Main Switchboard - Bulk Carrier Project">
+  <data key="d6">1.0</data>
+  <data key="d7">"FAT Date" belongs to section "Main Switchboard - Bulk Carrier Project"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT Date" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"FAT Date" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="15-May-2026" target="Main Switchboard - Bulk Carrier Project">
+  <data key="d6">1.0</data>
+  <data key="d7">"15-May-2026" belongs to section "Main Switchboard - Bulk Carrier Project"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="15-May-2026" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"15-May-2026" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Main Switchboard - Bulk Carrier Project" target="Factory Acceptance Test">
+  <data key="d6">1.0</data>
+  <data key="d7">"Factory Acceptance Test" belongs to section "Main Switchboard - Bulk Carrier Project"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-8bc0c5202093f65d83a952359a539dea</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Main Switchboard - Bulk Carrier Project" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">1.2</data>
+  <data key="d7">"Main Switchboard - Bulk Carrier Project" is a subsection of "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">subsection, hierarchy, structure</data>
+  <data key="d9">chunk-f5a0872a301a61b3dc3c2e5fe84bea1e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT Test Section 1" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">1.2</data>
+  <data key="d7">"FAT Test Section 1" is a subsection of "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">subsection, hierarchy, structure</data>
+  <data key="d9">chunk-8218b17b90878dbaed283d33b39cef5b</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT Test Section 1" target="Factory Acceptance Test">
+  <data key="d6">1.0</data>
+  <data key="d7">"Factory Acceptance Test" belongs to section "FAT Test Section 1"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-8218b17b90878dbaed283d33b39cef5b</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT Test Section 2" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">1.2</data>
+  <data key="d7">"FAT Test Section 2" is a subsection of "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">subsection, hierarchy, structure</data>
+  <data key="d9">chunk-0355b790f27da277cb89771a231f25c1</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT Test Section 2" target="Factory Acceptance Test">
+  <data key="d6">1.0</data>
+  <data key="d7">"Factory Acceptance Test" belongs to section "FAT Test Section 2"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-0355b790f27da277cb89771a231f25c1</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT Test Section 3" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">1.2</data>
+  <data key="d7">"FAT Test Section 3" is a subsection of "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">subsection, hierarchy, structure</data>
+  <data key="d9">chunk-f608594097b1740732f5d52f419a0321</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT Test Section 3" target="Factory Acceptance Test">
+  <data key="d6">1.0</data>
+  <data key="d7">"Factory Acceptance Test" belongs to section "FAT Test Section 3"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-f608594097b1740732f5d52f419a0321</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT Test Section 4" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">1.2</data>
+  <data key="d7">"FAT Test Section 4" is a subsection of "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">subsection, hierarchy, structure</data>
+  <data key="d9">chunk-6bf490024d689d3a434af434c43e9cfa</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT Test Section 4" target="Factory Acceptance Test">
+  <data key="d6">1.0</data>
+  <data key="d7">"Factory Acceptance Test" belongs to section "FAT Test Section 4"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-6bf490024d689d3a434af434c43e9cfa</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT Test Section 5" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">1.2</data>
+  <data key="d7">"FAT Test Section 5" is a subsection of "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">subsection, hierarchy, structure</data>
+  <data key="d9">chunk-afcb3417cb1df4eb32f445bf30e6072a</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT Test Section 5" target="Factory Acceptance Test">
+  <data key="d6">1.0</data>
+  <data key="d7">"Factory Acceptance Test" belongs to section "FAT Test Section 5"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-afcb3417cb1df4eb32f445bf30e6072a</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT Test Section 6" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">1.2</data>
+  <data key="d7">"FAT Test Section 6" is a subsection of "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">subsection, hierarchy, structure</data>
+  <data key="d9">chunk-bb8b9dae1e798160cb67f029ccb80515</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT Test Section 6" target="Factory Acceptance Test">
+  <data key="d6">1.0</data>
+  <data key="d7">"Factory Acceptance Test" belongs to section "FAT Test Section 6"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-bb8b9dae1e798160cb67f029ccb80515</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT Test Section 7" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">1.2</data>
+  <data key="d7">"FAT Test Section 7" is a subsection of "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">subsection, hierarchy, structure</data>
+  <data key="d9">chunk-fd33ccdacda82d65ecb1fcb3decdc479</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT Test Section 7" target="Factory Acceptance Test">
+  <data key="d6">1.0</data>
+  <data key="d7">"Factory Acceptance Test" belongs to section "FAT Test Section 7"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-fd33ccdacda82d65ecb1fcb3decdc479</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT Test Section 8" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">1.2</data>
+  <data key="d7">"FAT Test Section 8" is a subsection of "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">subsection, hierarchy, structure</data>
+  <data key="d9">chunk-ce854df69d8ecdaa1521a86420f2fc6c</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT Test Section 8" target="Factory Acceptance Test">
+  <data key="d6">1.0</data>
+  <data key="d7">"Factory Acceptance Test" belongs to section "FAT Test Section 8"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-ce854df69d8ecdaa1521a86420f2fc6c</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT Test Section 9" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">1.2</data>
+  <data key="d7">"FAT Test Section 9" is a subsection of "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">subsection, hierarchy, structure</data>
+  <data key="d9">chunk-77c0b72f0f6f68630caa533c77b609d5</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT Test Section 9" target="Factory Acceptance Test">
+  <data key="d6">1.0</data>
+  <data key="d7">"Factory Acceptance Test" belongs to section "FAT Test Section 9"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-77c0b72f0f6f68630caa533c77b609d5</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT Test Section 10" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">1.2</data>
+  <data key="d7">"FAT Test Section 10" is a subsection of "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">subsection, hierarchy, structure</data>
+  <data key="d9">chunk-e76ad245418b4314f8db8ad4189bf9ad</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT Test Section 10" target="Factory Acceptance Test">
+  <data key="d6">1.0</data>
+  <data key="d7">"Factory Acceptance Test" belongs to section "FAT Test Section 10"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-e76ad245418b4314f8db8ad4189bf9ad</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="No damage" target="Visual Inspection">
+  <data key="d6">1.0</data>
+  <data key="d7">acceptance_criteria</data>
+  <data key="d8">acceptance_criteria</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="No damage" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"No damage" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="No damage" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"No damage" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="No defects observed" target="Visual Inspection">
+  <data key="d6">1.0</data>
+  <data key="d7">actual_result</data>
+  <data key="d8">actual_result</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="No defects observed" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"No defects observed" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="No defects observed" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"No defects observed" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Insulation Resistance" target="&gt;1 M W">
+  <data key="d6">1.0</data>
+  <data key="d7">acceptance_criteria</data>
+  <data key="d8">acceptance_criteria</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Insulation Resistance" target="245 M W">
+  <data key="d6">1.0</data>
+  <data key="d7">actual_result</data>
+  <data key="d8">actual_result</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Insulation Resistance" target="PASS">
+  <data key="d6">1.0</data>
+  <data key="d7">status</data>
+  <data key="d8">status</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Insulation Resistance" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"Insulation Resistance" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Insulation Resistance" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Insulation Resistance" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="&gt;1 M W" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"&gt;1 M W" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="&gt;1 M W" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"&gt;1 M W" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="245 M W" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"245 M W" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="245 M W" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"245 M W" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Continuity Test" target="100% continuity">
+  <data key="d6">1.0</data>
+  <data key="d7">acceptance_criteria</data>
+  <data key="d8">acceptance_criteria</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Continuity Test" target="Verified">
+  <data key="d6">1.0</data>
+  <data key="d7">actual_result</data>
+  <data key="d8">actual_result</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Continuity Test" target="PASS">
+  <data key="d6">1.0</data>
+  <data key="d7">status</data>
+  <data key="d8">status</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Continuity Test" target="Test Item">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Continuity Test" target="Visual Inspection">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Continuity Test" target="Breaker Functional Test">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Continuity Test" target="Relay Calibration">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Continuity Test" target="Alarm Verification">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Continuity Test" target="Communication Test">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Continuity Test" target="Load Simulation">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Continuity Test" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"Continuity Test" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Continuity Test" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Continuity Test" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="100% continuity" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"100% continuity" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="100% continuity" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"100% continuity" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Verified" target="Alarm Verification">
+  <data key="d6">1.0</data>
+  <data key="d7">actual_result</data>
+  <data key="d8">actual_result</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Verified" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"Verified" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Verified" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Verified" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Breaker Functional Test" target="Operate correctly">
+  <data key="d6">1.0</data>
+  <data key="d7">acceptance_criteria</data>
+  <data key="d8">acceptance_criteria</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Breaker Functional Test" target="Successful">
+  <data key="d6">1.0</data>
+  <data key="d7">actual_result</data>
+  <data key="d8">actual_result</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Breaker Functional Test" target="PASS">
+  <data key="d6">1.0</data>
+  <data key="d7">status</data>
+  <data key="d8">status</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Breaker Functional Test" target="Test Item">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Breaker Functional Test" target="Visual Inspection">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Breaker Functional Test" target="Relay Calibration">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Breaker Functional Test" target="Alarm Verification">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Breaker Functional Test" target="Communication Test">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Breaker Functional Test" target="Load Simulation">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Breaker Functional Test" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"Breaker Functional Test" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Breaker Functional Test" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Breaker Functional Test" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Operate correctly" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"Operate correctly" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Operate correctly" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Operate correctly" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Successful" target="Communication Test">
+  <data key="d6">1.0</data>
+  <data key="d7">actual_result</data>
+  <data key="d8">actual_result</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Successful" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"Successful" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Successful" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Successful" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Relay Calibration" target="Within tolerance">
+  <data key="d6">1.0</data>
+  <data key="d7">actual_result</data>
+  <data key="d8">actual_result</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Relay Calibration" target="PASS">
+  <data key="d6">1.0</data>
+  <data key="d7">status</data>
+  <data key="d8">status</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Relay Calibration" target="Test Item">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Relay Calibration" target="Visual Inspection">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Relay Calibration" target="Alarm Verification">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Relay Calibration" target="Communication Test">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Relay Calibration" target="Load Simulation">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Relay Calibration" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"Relay Calibration" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Relay Calibration" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Relay Calibration" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Within tolerance" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"Within tolerance" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Within tolerance" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Within tolerance" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Alarm Verification" target="All alarms trigger">
+  <data key="d6">1.0</data>
+  <data key="d7">acceptance_criteria</data>
+  <data key="d8">acceptance_criteria</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Alarm Verification" target="PASS">
+  <data key="d6">1.0</data>
+  <data key="d7">status</data>
+  <data key="d8">status</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Alarm Verification" target="Test Item">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Alarm Verification" target="Visual Inspection">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Alarm Verification" target="Communication Test">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Alarm Verification" target="Load Simulation">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Alarm Verification" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"Alarm Verification" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Alarm Verification" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Alarm Verification" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="All alarms trigger" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"All alarms trigger" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="All alarms trigger" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"All alarms trigger" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Communication Test" target="Stable communication">
+  <data key="d6">1.0</data>
+  <data key="d7">acceptance_criteria</data>
+  <data key="d8">acceptance_criteria</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Communication Test" target="PASS">
+  <data key="d6">1.0</data>
+  <data key="d7">status</data>
+  <data key="d8">status</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Communication Test" target="Test Item">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Communication Test" target="Visual Inspection">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Communication Test" target="Load Simulation">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Communication Test" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"Communication Test" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Communication Test" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Communication Test" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Stable communication" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"Stable communication" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Stable communication" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Stable communication" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Load Simulation" target="No abnormal behavior">
+  <data key="d6">1.0</data>
+  <data key="d7">acceptance_criteria</data>
+  <data key="d8">acceptance_criteria</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Load Simulation" target="Stable operation">
+  <data key="d6">1.0</data>
+  <data key="d7">actual_result</data>
+  <data key="d8">actual_result</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Load Simulation" target="PASS">
+  <data key="d6">1.0</data>
+  <data key="d7">status</data>
+  <data key="d8">status</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Load Simulation" target="Test Item">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Load Simulation" target="Visual Inspection">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Load Simulation" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"Load Simulation" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Load Simulation" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Load Simulation" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="No abnormal behavior" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"No abnormal behavior" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="No abnormal behavior" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"No abnormal behavior" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Stable operation" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"Stable operation" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Stable operation" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Stable operation" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Temperature Rise" target="&lt; 65°C">
+  <data key="d6">1.0</data>
+  <data key="d7">acceptance_criteria</data>
+  <data key="d8">acceptance_criteria</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Temperature Rise" target="52°C">
+  <data key="d6">1.0</data>
+  <data key="d7">actual_result</data>
+  <data key="d8">actual_result</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Temperature Rise" target="PASS">
+  <data key="d6">1.0</data>
+  <data key="d7">status</data>
+  <data key="d8">status</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Temperature Rise" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"Temperature Rise" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Temperature Rise" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Temperature Rise" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="&lt; 65°C" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"&lt; 65°C" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="&lt; 65°C" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"&lt; 65°C" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="52°C" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"52°C" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="52°C" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"52°C" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Final Acceptance" target="All tests pass">
+  <data key="d6">1.0</data>
+  <data key="d7">acceptance_criteria</data>
+  <data key="d8">acceptance_criteria</data>
+  <data key="d9">chunk-34e3e4b849d229c69cc2cf9e8383ec39</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Final Acceptance" target="Accepted">
+  <data key="d6">1.0</data>
+  <data key="d7">actual_result</data>
+  <data key="d8">actual_result</data>
+  <data key="d9">chunk-34e3e4b849d229c69cc2cf9e8383ec39</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Final Acceptance" target="PASS">
+  <data key="d6">1.0</data>
+  <data key="d7">status</data>
+  <data key="d8">status</data>
+  <data key="d9">chunk-34e3e4b849d229c69cc2cf9e8383ec39</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Final Acceptance" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"Final Acceptance" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-34e3e4b849d229c69cc2cf9e8383ec39</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Final Acceptance" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Final Acceptance" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-34e3e4b849d229c69cc2cf9e8383ec39</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="All tests pass" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"All tests pass" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-34e3e4b849d229c69cc2cf9e8383ec39</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="All tests pass" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"All tests pass" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-34e3e4b849d229c69cc2cf9e8383ec39</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Accepted" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"Accepted" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-34e3e4b849d229c69cc2cf9e8383ec39</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Accepted" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Accepted" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-34e3e4b849d229c69cc2cf9e8383ec39</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="PASS" target="Visual Inspection">
+  <data key="d6">1.0</data>
+  <data key="d7">status</data>
+  <data key="d8">status</data>
+  <data key="d9">chunk-14c2840f35da5c6a31d1a826a487b1ac</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="PASS" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"PASS" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-34e3e4b849d229c69cc2cf9e8383ec39</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="PASS" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"PASS" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-34e3e4b849d229c69cc2cf9e8383ec39</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Test Item" target="Visual Inspection">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-34e3e4b849d229c69cc2cf9e8383ec39</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Test Item" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"Test Item" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-34e3e4b849d229c69cc2cf9e8383ec39</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Test Item" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Test Item" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-34e3e4b849d229c69cc2cf9e8383ec39</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Visual Inspection" target="Detailed Test Results">
+  <data key="d6">1.0</data>
+  <data key="d7">"Visual Inspection" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-34e3e4b849d229c69cc2cf9e8383ec39</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Visual Inspection" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Visual Inspection" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-34e3e4b849d229c69cc2cf9e8383ec39</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Detailed Test Results" target="Factory Acceptance Test">
+  <data key="d6">1.0</data>
+  <data key="d7">"Factory Acceptance Test" belongs to section "Detailed Test Results"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-39d9826788cfd87f790ed5921517238e</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Detailed Test Results" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">1.2</data>
+  <data key="d7">"Detailed Test Results" is a subsection of "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">subsection, hierarchy, structure</data>
+  <data key="d9">chunk-34e3e4b849d229c69cc2cf9e8383ec39</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="NCR-001" target="Label missing on feeder">
+  <data key="d6">1.0</data>
+  <data key="d7">description</data>
+  <data key="d8">description</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="NCR-001" target="Label installed">
+  <data key="d6">1.0</data>
+  <data key="d7">corrective_action</data>
+  <data key="d8">corrective_action</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="NCR-001" target="Closed">
+  <data key="d6">1.0</data>
+  <data key="d7">status</data>
+  <data key="d8">status</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="NCR-001" target="Non-Conformities">
+  <data key="d6">1.0</data>
+  <data key="d7">"NCR-001" belongs to section "Non-Conformities"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="NCR-001" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"NCR-001" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Label missing on feeder" target="Non-Conformities">
+  <data key="d6">1.0</data>
+  <data key="d7">"Label missing on feeder" belongs to section "Non-Conformities"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Label missing on feeder" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Label missing on feeder" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Label installed" target="Corrective Action">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Label installed" target="feeder">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Label installed" target="Non-Conformities">
+  <data key="d6">1.0</data>
+  <data key="d7">"Label installed" belongs to section "Non-Conformities"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Label installed" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Label installed" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Closed" target="NCR-002">
+  <data key="d6">1.0</data>
+  <data key="d7">status</data>
+  <data key="d8">status</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Closed" target="NCR-003">
+  <data key="d6">1.0</data>
+  <data key="d7">status</data>
+  <data key="d8">status</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Closed" target="Non-Conformities">
+  <data key="d6">1.0</data>
+  <data key="d7">"Closed" belongs to section "Non-Conformities"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Closed" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Closed" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="NCR-002" target="Drawing revision mismatch">
+  <data key="d6">1.0</data>
+  <data key="d7">description</data>
+  <data key="d8">description</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="NCR-002" target="Drawing updated">
+  <data key="d6">1.0</data>
+  <data key="d7">corrective_action</data>
+  <data key="d8">corrective_action</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="NCR-002" target="Non-Conformities">
+  <data key="d6">1.0</data>
+  <data key="d7">"NCR-002" belongs to section "Non-Conformities"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="NCR-002" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"NCR-002" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Drawing revision mismatch" target="Non-Conformities">
+  <data key="d6">1.0</data>
+  <data key="d7">"Drawing revision mismatch" belongs to section "Non-Conformities"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Drawing revision mismatch" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Drawing revision mismatch" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Drawing updated" target="Non-Conformities">
+  <data key="d6">1.0</data>
+  <data key="d7">"Drawing updated" belongs to section "Non-Conformities"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Drawing updated" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Drawing updated" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="NCR-003" target="Cable tag unclear">
+  <data key="d6">1.0</data>
+  <data key="d7">description</data>
+  <data key="d8">description</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="NCR-003" target="Tag replaced">
+  <data key="d6">1.0</data>
+  <data key="d7">corrective_action</data>
+  <data key="d8">corrective_action</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="NCR-003" target="Non-Conformities">
+  <data key="d6">1.0</data>
+  <data key="d7">"NCR-003" belongs to section "Non-Conformities"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="NCR-003" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"NCR-003" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Cable tag unclear" target="Non-Conformities">
+  <data key="d6">1.0</data>
+  <data key="d7">"Cable tag unclear" belongs to section "Non-Conformities"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Cable tag unclear" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Cable tag unclear" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Tag replaced" target="Non-Conformities">
+  <data key="d6">1.0</data>
+  <data key="d7">"Tag replaced" belongs to section "Non-Conformities"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Tag replaced" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Tag replaced" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Corrective Action" target="feeder">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Corrective Action" target="Non-Conformities">
+  <data key="d6">1.0</data>
+  <data key="d7">"Corrective Action" belongs to section "Non-Conformities"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Corrective Action" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Corrective Action" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="feeder" target="Non-Conformities">
+  <data key="d6">1.0</data>
+  <data key="d7">"feeder" belongs to section "Non-Conformities"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="feeder" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"feeder" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-20bb3e7f7bb7e37dbbef1075faeb4459</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Factory Acceptance Test" target="FAT activities">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-5b5d47241ce84a7bb484d68944935301</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Factory Acceptance Test" target="owner representative">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-5b5d47241ce84a7bb484d68944935301</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Factory Acceptance Test" target="classification surveyor">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-5b5d47241ce84a7bb484d68944935301</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Factory Acceptance Test" target="Non-Conformities">
+  <data key="d6">1.0</data>
+  <data key="d7">"Factory Acceptance Test" belongs to section "Non-Conformities"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-5b5d47241ce84a7bb484d68944935301</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Factory Acceptance Test" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"Factory Acceptance Test" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-5b5d47241ce84a7bb484d68944935301</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT activities" target="owner representative">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-5b5d47241ce84a7bb484d68944935301</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT activities" target="classification surveyor">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-5b5d47241ce84a7bb484d68944935301</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT activities" target="Non-Conformities">
+  <data key="d6">1.0</data>
+  <data key="d7">"FAT activities" belongs to section "Non-Conformities"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-5b5d47241ce84a7bb484d68944935301</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="FAT activities" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"FAT activities" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-5b5d47241ce84a7bb484d68944935301</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="owner representative" target="classification surveyor">
+  <data key="d6">1.0</data>
+  <data key="d7">associated_with</data>
+  <data key="d8">associated_with</data>
+  <data key="d9">chunk-5b5d47241ce84a7bb484d68944935301</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="owner representative" target="Non-Conformities">
+  <data key="d6">1.0</data>
+  <data key="d7">"owner representative" belongs to section "Non-Conformities"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-5b5d47241ce84a7bb484d68944935301</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="owner representative" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"owner representative" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-5b5d47241ce84a7bb484d68944935301</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="classification surveyor" target="Non-Conformities">
+  <data key="d6">1.0</data>
+  <data key="d7">"classification surveyor" belongs to section "Non-Conformities"</data>
+  <data key="d8">belongs_to, section, context</data>
+  <data key="d9">chunk-5b5d47241ce84a7bb484d68944935301</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="classification surveyor" target="Factory Acceptance Test (FAT) Report">
+  <data key="d6">0.8</data>
+  <data key="d7">"classification surveyor" is part of document section "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">part_of, ancestor, document_structure</data>
+  <data key="d9">chunk-5b5d47241ce84a7bb484d68944935301</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+<edge source="Factory Acceptance Test (FAT) Report" target="Non-Conformities">
+  <data key="d6">1.2</data>
+  <data key="d7">"Non-Conformities" is a subsection of "Factory Acceptance Test (FAT) Report"</data>
+  <data key="d8">subsection, hierarchy, structure</data>
+  <data key="d9">chunk-5b5d47241ce84a7bb484d68944935301</data>
+  <data key="d10">Shipbuilding_FAT_Report_With_Tables (3).pdf</data>
+  <data key="d11">1782176762</data>
+</edge>
+</graph></graphml>
