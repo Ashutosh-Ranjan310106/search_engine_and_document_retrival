@@ -120,7 +120,7 @@ export const chatStream = ({ query, history, top_k, use_reranking, search_mode }
 };
 
 // ── Stats ─────────────────────────────────────────────────────────────────────
-export const getStats = () => request("/stats");
+export const getStats = () => request("/health");
 export async function getHealth() {
   const res = await fetch(`${API_BASE}/health`);
   if (!res.ok) throw new Error(`health: ${res.status}`);

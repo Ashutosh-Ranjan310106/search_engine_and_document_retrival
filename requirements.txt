@@ -1,0 +1,14 @@
+fastapi[standard]
+aiohttp
+numpy
+
+beautifulsoup4
+pymupdf
+tools
+docling
+spacy
+gliner
+lightrag-hku[api]
+sentence_transformers
+pdfplumber
+DocxDoc

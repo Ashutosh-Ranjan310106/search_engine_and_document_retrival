@@ -183,7 +183,7 @@ def _env_int(name: str, default: int) -> int:
 # LightRAG rebuilds its vector index with the new dimension.
 
 OLLAMA_HOST      = os.getenv("OLLAMA_HOST",      "http://localhost:11434")
-EMBED_MODEL      = os.getenv("EMBED_MODEL",      "nomic-embed-text")   # single source of truth
+EMBED_MODEL      = os.getenv("EMBED_MODEL",      "nomic-embed-text:latest")   # single source of truth
 EMBED_DIM        = _env_int("EMBED_DIM",          768)                  # single source of truth
 EMBED_MAX_TOKENS = _env_int("EMBED_MAX_TOKENS",   8192)                 # FIX #15
 OLLAMA_MODEL     = os.getenv("OLLAMA_MODEL",      "llama3.1")
