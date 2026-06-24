@@ -1,2 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+lightrag/api/webui/** binary
+lightrag/api/webui/** linguist-generated
