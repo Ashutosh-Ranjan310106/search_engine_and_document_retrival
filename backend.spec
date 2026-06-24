@@ -2,24 +2,44 @@
 
 import os
 from PyInstaller.utils.hooks import collect_submodules
-
+from PyInstaller.utils.hooks import collect_dynamic_libs
 block_cipher = None
 
-# IMPORTANT: force PyInstaller to include backend modules
-hidden_imports = (
+# Collect backend + lightrag modules automatically
+hiddenimports = (
     collect_submodules("backend")
     + collect_submodules("lightrag")
+    + collect_submodules("uvicorn")
+    + collect_submodules("fastapi")
+    + collect_submodules("starlette")
 )
-
+hiddenimports += [
+    "jaraco.text",
+    "jaraco.functools",
+    "jaraco.context",
+    "more_itertools",
+    "pkg_resources",
+]
+hiddenimports += collect_submodules("docling")
+hiddenimports += collect_submodules("spacy")
+hiddenimports += collect_submodules("transformers")
+hiddenimports += collect_submodules("torch")
+hiddenimports += collect_submodules("onnxruntime")
+hiddenimports += ["pkg_resources.py2_warn"]
+hiddenimports += collect_submodules("docling.models")
+hiddenimports += collect_submodules("docling.pipeline")
+hiddenimports += collect_submodules("docling_core")
+hiddenimports += [
+    "fitz",
+]
+binaries = collect_dynamic_libs("PyMuPDF")
 a = Analysis(
-    ["run.py"],   # your entry point
-    pathex=[os.getcwd()],  # CRITICAL FIX: ensures backend package is found
-    binaries=[],
+    ["run.py"],
+    pathex=[os.getcwd()],   # CRITICAL FIX
+    binaries=binaries,
     datas=[],
-    hiddenimports=hidden_imports + [
-        "uvicorn",
-        "fastapi",
-        "starlette",
+
+    hiddenimports=hiddenimports + [
         "backend",
         "backend.knowledge_rag",
         "backend.dockling_document_extraction",
@@ -32,8 +52,6 @@ a = Analysis(
         "matplotlib",
         "notebook",
         "pytest",
-        "setuptools",
-        "wheel",
         "IPython",
         "fastapi_cli"
     ],
@@ -53,7 +71,7 @@ exe = EXE(
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
-    upx=True,
+    upx=False,
     console=True,
 )
 
@@ -63,6 +81,6 @@ coll = COLLECT(
     a.zipfiles,
     a.datas,
     strip=False,
-    upx=True,
+    upx=False,
     name="backend"
 )

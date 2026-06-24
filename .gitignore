@@ -100,4 +100,5 @@ memory-bank
 */dist/
 */build/
 Ollama/
-uploads\
+uploads/
+upx/*
