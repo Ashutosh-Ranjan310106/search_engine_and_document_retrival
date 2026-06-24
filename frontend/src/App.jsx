@@ -8,10 +8,13 @@ import DocumentViewer from "./components/DocumentViewer.jsx";
 import ChatBox        from "./components/ChatBox.jsx";
 import StatsBar       from "./components/StatsBar.jsx";
 import GraphPage      from "./components/GraphPage.jsx";
+import OfflineLoader  from "./components/OfflineLoader.jsx";
+import "./components/OfflineLoader.css";
 import "./App.css";
 import "./components/GraphPage.css";
 
-const HEALTH_POLL_MS = 30_000;   // re-fetch health every 30 s
+const HEALTH_POLL_MS     = 30_000;
+const RETRY_INTERVAL_MS  = 5_000;
 
 export default function App() {
   const [docs,                  setDocs]                = useState([]);
@@ -21,28 +24,51 @@ export default function App() {
   const [activeCitationChunkId, setActiveCitation]      = useState(null);
   const [sidebarTab,            setSidebarTab]          = useState("docs");
   const [page,                  setPage]                = useState("main");
+  const [backendStatus,         setBackendStatus]       = useState("connecting");
+
+const checkHealth = useCallback(async () => {
+  try {
+    const h = await getHealth();
+    if (h?.status === "ok") {
+      setHealth(h);
+      setBackendStatus("ready");
+      return true;
+    }
+
+
+    return false;
+
+  } catch (e) {
+
+    return false;
+  }
+}, []);
 
   const reload = useCallback(async () => {
     try { setDocs(await listDocuments()); } catch {}
     try { setStats(await getStats()); }    catch {}
   }, []);
 
-  // Health is fetched separately on a slower poll so it doesn't block the
-  // main data reload and can be refreshed independently.
-  const reloadHealth = useCallback(async () => {
-    try { setHealth(await getHealth()); } catch {}
-  }, []);
-
+  // On mount: check health, then load data if healthy.
   useEffect(() => {
-    reload();
-    reloadHealth();
-  }, [reload, reloadHealth]);
+    checkHealth().then((ok) => { if (ok) reload(); });
+  }, [checkHealth, reload]);
 
-  // Poll health every 30 s so uptime and live feature flags stay fresh.
+  // While offline: retry health every 5 s automatically.
   useEffect(() => {
-    const id = setInterval(reloadHealth, HEALTH_POLL_MS);
+    if (backendStatus === "ready") return;
+    const id = setInterval(() => {
+      checkHealth().then((ok) => { if (ok) reload(); });
+    }, RETRY_INTERVAL_MS);
     return () => clearInterval(id);
-  }, [reloadHealth]);
+  }, [backendStatus, checkHealth, reload]);
+
+  // Once online: keep health fresh every 30 s.
+  useEffect(() => {
+    if (backendStatus !== "ready") return;
+    const id = setInterval(checkHealth, HEALTH_POLL_MS);
+    return () => clearInterval(id);
+  }, [backendStatus, checkHealth]);
 
   const handleUploaded = (doc) => {
     reload();
@@ -63,7 +89,22 @@ export default function App() {
     }
   };
 
-  // ── graph page ─────────────────────────────────────────────────────────────
+  // ── offline gate ────────────────────────────────────────────────────────────
+  if (backendStatus !== "ready") {
+    return (
+      <OfflineLoader
+        status={backendStatus}
+        onRetry={() => {
+          setBackendStatus("connecting");
+          checkHealth().then((ok) => {
+            if (ok) reload();
+          });
+        }}
+      />
+    );
+  }
+
+  // ── graph page ──────────────────────────────────────────────────────────────
   if (page === "graph") {
     return (
       <GraphPage
@@ -73,10 +114,9 @@ export default function App() {
     );
   }
 
-  // ── main page ──────────────────────────────────────────────────────────────
+  // ── main page ───────────────────────────────────────────────────────────────
   return (
     <div className="app">
-      {/* ── Header ── */}
       <header className="header">
         <div className="header__brand">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="2">
@@ -103,14 +143,10 @@ export default function App() {
           Knowledge Graph
         </button>
 
-        {/* health prop added — StatsBar now shows the detail panel on expand */}
         <StatsBar stats={stats} health={health} />
       </header>
 
-      {/* ── Body ── */}
       <div className="body">
-
-        {/* LEFT sidebar */}
         <aside className="sidebar">
           <section className="sidebar__section">
             <div className="panel-title">
@@ -168,12 +204,10 @@ export default function App() {
           </div>
         </aside>
 
-        {/* CENTER: viewer */}
         <main className="center">
           <DocumentViewer doc={selectedDoc} activeCitationChunkId={activeCitationChunkId} />
         </main>
 
-        {/* RIGHT: chat */}
         <aside className="chat-col">
           <div className="panel-title">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -186,7 +220,6 @@ export default function App() {
           </div>
           <ChatBox onCitationClick={handleCitationClick} />
         </aside>
-
       </div>
     </div>
   );

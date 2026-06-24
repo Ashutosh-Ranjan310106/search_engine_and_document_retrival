@@ -27,12 +27,12 @@ load_dotenv(os.path.join(BASE_DIR, '.env'))
 
 # ── Start uvicorn ─────────────────────────────────────────────────────────────
 import uvicorn
+from backend.knowledge_rag import app
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     uvicorn.run(
-        'backend.knowledge_rag:app',   # FastAPI app object
-        host=os.getenv('HOST', '0.0.0.0'),
-        port=int(os.getenv('PORT', '8000')),
-        log_level='info',
-        # Do NOT use reload=True in frozen exe
+        app,
+        host=os.getenv("HOST", "0.0.0.0"),
+        port=int(os.getenv("PORT", "8000")),
+        log_level="info",
     )

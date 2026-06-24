@@ -12,3 +12,5 @@ lightrag-hku[api]
 sentence_transformers
 pdfplumber
 DocxDoc
+ollama
+torchvision

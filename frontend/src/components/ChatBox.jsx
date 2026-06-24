@@ -24,7 +24,12 @@ export default function ChatBox({ onCitationClick }) {
     if (!input.trim() || streaming) return;
 
     const userContent = input.trim();
-    const history     = messages.map((m) => ({ role: m.role, content: m.content }));
+
+    // FIX #1: Snapshot history from the CURRENT messages (before we add the
+    // new user + assistant shells).  This means the history sent to the backend
+    // contains only completed prior turns — not the empty assistant placeholder
+    // we're about to append.
+    const history = messages.map((m) => ({ role: m.role, content: m.content }));
 
     setMessages((prev) => [
       ...prev,
@@ -68,7 +73,10 @@ export default function ChatBox({ onCitationClick }) {
           setError(e.message);
           setMessages((prev) => {
             const next = [...prev];
-            const last = { ...next[next.length - 1], streaming: false, content: prev[prev.length - 1].content || "[Error receiving response]" };
+            // FIX #2: read from `next`, not `prev` — `next` is the mutated
+            // copy; `prev[prev.length - 1]` still has the old (empty) content.
+            const last = { ...next[next.length - 1], streaming: false };
+            if (!last.content) last.content = "[Error receiving response]";
             next[next.length - 1] = last;
             return next;
           });
@@ -119,8 +127,10 @@ export default function ChatBox({ onCitationClick }) {
     <div className="chat">
       {/* Toolbar */}
       <div className="chat__toolbar">
+        {/* FIX #3: added "full" mode option to match backend */}
         <select className="select" value={mode} onChange={(e) => setMode(e.target.value)}>
           <option value="hybrid">Hybrid</option>
+          <option value="full">Full (BM25 + semantic + graph)</option>
           <option value="graph">Graph</option>
           <option value="keyword">Keyword</option>
           <option value="semantic">Semantic</option>
@@ -156,7 +166,7 @@ export default function ChatBox({ onCitationClick }) {
         ) : (
           messages.map((m) => (
             <div key={m.id} className={`message message--${m.role}`}>
-              <div className="message__label">{m.role === "user" ? "You" : "Nexus"}</div>
+              <div className="message__label">{m.role === "user" ? "You" : "System"}</div>
               <div className="message__bubble">
                 {m.role === "assistant"
                   ? <>{renderContent(m.content, m.citations)}{m.streaming && <span className="cursor-blink" />}</>

@@ -1310,35 +1310,55 @@ async def chat(req: ChatRequest):
         "chunks_used": len(candidates),
     }
 
-
+from fastapi.responses import StreamingResponse
+import asyncio, json
+ 
 @app.post("/chat/stream", tags=["Chat"])
 async def chat_stream(req: ChatRequest):
     candidates, citations, context, system, messages = await _build_context(req)
-
+ 
     async def event_gen():
+        # Always emit citations first so the frontend can render source cards
+        # before the first token arrives.
         yield f"event: citations\ndata: {json.dumps(citations)}\n\n"
+ 
         if not OLLAMA_OK:
-            yield "data: [LLM not configured — start Ollama and set OLLAMA_MODEL]\n\n"
+            yield "data: " + json.dumps({"text": "[LLM not configured — start Ollama and set OLLAMA_MODEL]"}) + "\n\n"
             yield "event: done\ndata: {}\n\n"
             return
+ 
+        # FIX: use the existing stream_llm() helper which correctly offloads
+        # the blocking _OLLAMA.chat(stream=True) iterator to a thread via
+        # asyncio.create_task + asyncio.Queue.  Consuming the queue here is
+        # fully async — the event loop is never blocked.
+        q = await stream_llm(system=system, messages=messages)
+ 
         try:
-            ollama_messages = [{"role": "system", "content": system}, *messages]
-            stream = _OLLAMA.chat(
-                model=OLLAMA_MODEL,
-                messages=ollama_messages,
-                stream=True,
-                think=OLLAMA_THINK,
-            )
-            for part in stream:
-                text = part["message"]["content"]
-                if text:
-                    yield f"data: {json.dumps({'text': text})}\n\n"
-                    await asyncio.sleep(0)
-        except Exception as e:
-            yield f"event: error\ndata: {json.dumps({'error': str(e)})}\n\n"
+            while True:
+                item = await q.get()
+                if item is None:          # sentinel — stream finished
+                    break
+                if item["type"] == "text":
+                    yield "data: " + json.dumps({"text": item["text"]}) + "\n\n"
+                elif item["type"] == "error":
+                    yield "event: error\ndata: " + json.dumps({"error": item["text"]}) + "\n\n"
+                    return
+        except asyncio.CancelledError:
+            # Client disconnected — stop gracefully
+            return
+ 
         yield "event: done\ndata: {}\n\n"
-
-    return StreamingResponse(event_gen(), media_type="text/event-stream")
+ 
+    return StreamingResponse(
+        event_gen(),
+        media_type="text/event-stream",
+        headers={
+            # Prevent nginx / proxies from buffering the stream
+            "X-Accel-Buffering": "no",
+            "Cache-Control":     "no-cache",
+        },
+    )
+ 
 # ── Graph export ──────────────────────────────────────────────────────────────
 @app.get("/graph/export", tags=["Graph"])
 async def graph_export(

@@ -105,6 +105,7 @@ networkx==3.6.1
 nibabel==5.4.2
 nipype==1.11.0
 numpy==2.5.0
+ollama==0.6.2
 omegaconf==2.3.1
 onnxruntime==1.27.0
 openai==2.43.0
@@ -117,6 +118,7 @@ pathlib==1.0.1
 pdfminer.six==20260107
 pdfplumber==0.11.10
 pillow==12.2.0
+pipdeptree==3.1.0
 pipmaster==1.1.13
 pluggy==1.6.0
 polyfactory==3.3.0
@@ -171,7 +173,6 @@ safetensors==0.8.0
 scikit-learn==1.9.0
 scipy==1.18.0
 semchunk==3.2.5
-sentence-transformers==5.6.0
 sentencepiece==0.2.1
 sentry-sdk==2.63.0
 setuptools==81.0.0
@@ -196,7 +197,7 @@ threadpoolctl==3.6.0
 tiktoken==0.13.0
 tokenizers==0.22.2
 tools==1.0.30
-torch==2.12.1
+torch==2.12.1+cpu
 torchvision==0.27.1
 tqdm==4.68.3
 traits==7.1.0

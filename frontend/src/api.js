@@ -122,14 +122,14 @@ export const chatStream = ({ query, history, top_k, use_reranking, search_mode }
 // ── Stats ─────────────────────────────────────────────────────────────────────
 export const getStats = () => request("/health");
 export async function getHealth() {
-  const res = await fetch(`${API_BASE}/health`);
+  const res = await fetch(`${BASE}/health`);
   if (!res.ok) throw new Error(`health: ${res.status}`);
   return res.json();
 }
  
 // Alias — GET / returns the same shape (minus live doc/chunk counts)
 export async function getRoot() {
-  const res = await fetch(`${API_BASE}/`);
+  const res = await fetch(`${BASE}/`);
   if (!res.ok) throw new Error(`root: ${res.status}`);
   return res.json();
 }
