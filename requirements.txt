@@ -156,8 +156,6 @@ python-jose==3.5.0
 python-multipart==0.0.32
 python-pptx==1.0.2
 pytz==2026.2
-pywin32==312
-pywin32-ctypes==0.2.3
 pyxnat==1.6.4
 PyYAML==6.0.3
 rapidocr==3.9.0
