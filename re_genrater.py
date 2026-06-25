@@ -8,11 +8,7 @@ from pathlib import Path
 # -----------------------------
 # Configuration
 # -----------------------------
-APP_COMMAND = [
-    "fastapi",
-    "run",
-    r"backend\knowledge_rag.py"
-]
+APP_COMMAND = ["uvicorn", "backend.knowledge_rag:app", "--host", "0.0.0.0", "--port", "8000"]
 
 REQ_FILE = "requirements.txt"
 LOG_FILE = "dependency_log.txt"

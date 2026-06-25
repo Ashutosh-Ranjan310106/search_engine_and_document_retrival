@@ -261,7 +261,7 @@ async def _ollama_embed(texts: list[str]) -> np.ndarray:
     global _embed_call_count
     _embed_call_count += 1
     call_id = _embed_call_count
-
+    print("\n\n\n\n\n\ntexts",texts)
     t0 = time.perf_counter()
     async with aiohttp.ClientSession() as s:
         async with s.post(
@@ -277,7 +277,6 @@ async def _ollama_embed(texts: list[str]) -> np.ndarray:
     arr = np.array(embeddings, dtype=np.float32)
     if arr.ndim == 1:
         arr = arr.reshape(1, -1)
-
     if arr.shape[1] != EMBED_DIM:
         raise ValueError(
             f"{EMBED_MODEL} returned dim={arr.shape[1]} but EMBED_DIM={EMBED_DIM}. "
