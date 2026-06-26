@@ -102,3 +102,6 @@ memory-bank
 Ollama/
 uploads/
 upx/*
+python-3.11.0-embed-amd64
+get-pip.py
+*.exe
