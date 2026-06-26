@@ -19,6 +19,7 @@ venv/
 # Enviroment Variable Files
 .env
 .env.backup.*
+*.env
 
 # Generated Docker Compose files (output of setup wizard)
 docker-compose.*.yml
@@ -105,3 +106,6 @@ upx/*
 python-3.11.0-embed-amd64
 get-pip.py
 *.exe
+*.ico
+
+re_genrater.py
