@@ -109,4 +109,5 @@ get-pip.py
 *.ico
 directory_maker.py
 re_genrater.py
+run_me.py
 *.db
