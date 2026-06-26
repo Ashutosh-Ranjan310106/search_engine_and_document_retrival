@@ -107,5 +107,6 @@ python-3.11.0-embed-amd64
 get-pip.py
 *.exe
 *.ico
-
+directory_maker.py
 re_genrater.py
+*.db
